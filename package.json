@@ -26,7 +26,7 @@
     "@types/styled-components": "^5.1.0",
     "@types/styled-system": "^5.1.9",
     "@types/uniqid": "^5.2.0",
-    "babel-loader": "^8.1.0",
+    "babel-loader": "8.1.0",
     "chroma-js": "^2.1.0",
     "customize-cra": "^1.0.0",
     "deepmerge": "^4.2.2",
