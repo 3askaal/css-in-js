@@ -1,7 +1,7 @@
 import { colors, palette, presets, states } from '.'
 
 export const theme: any = {
-  breakpoints: ['576px', '768px', '992px', '1200px'],
+  breakpoints: ['320px', '576px', '768px', '992px', '1200px'],
   rootFontSizes: ['12px', '14px', '16px'],
   space: {
     xxxs: '0.2rem',
