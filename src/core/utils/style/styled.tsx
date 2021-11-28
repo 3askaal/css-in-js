@@ -53,7 +53,7 @@ export const styledWrapper = (
   return styleFunctions
 }
 
-export const styled: any = mapValues(
+export const s: any = mapValues(
   styledComponents,
   (value: () => any): any => {
     return wrap(value, (func: any, ...declProps) => {
