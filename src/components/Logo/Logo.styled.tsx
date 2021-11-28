@@ -1,4 +1,4 @@
-import { styled } from '@core'
+import { s } from '@core'
 import { css, keyframes } from 'styled-components'
 
 const fadeIn: any = keyframes({
@@ -24,7 +24,7 @@ const beforeAndAfter = {
   zIndex: 0,
 }
 
-export const SLogo = styled.div(
+export const SLogo = s.div(
   ({ theme }: any) => ({
     position: 'relative',
     display: 'inline-flex',

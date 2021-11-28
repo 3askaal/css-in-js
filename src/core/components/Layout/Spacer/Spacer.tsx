@@ -1,7 +1,7 @@
 import React from 'react'
-import { styled } from '../../../utils'
+import { s } from '../../../utils'
 
-export const SSpacer = styled.div(
+export const SSpacer = s.div(
   ({ theme, size = 'm', s: { flexDirection = 'column' } = {} }: any) => ({
     display: 'flex',
     width: '100%',

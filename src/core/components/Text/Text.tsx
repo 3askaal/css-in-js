@@ -1,7 +1,7 @@
 import React from 'react'
-import { styled } from '../../utils'
+import { s } from '../../utils'
 
-const SText = styled.p(({ as }: any) => ({
+const SText = s.p(({ as }: any) => ({
   lineHeight: 1.6,
 
   ...(as === 'small' && {

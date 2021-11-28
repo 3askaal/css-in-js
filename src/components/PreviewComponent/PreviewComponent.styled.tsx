@@ -1,13 +1,13 @@
-import { styled } from '@core'
+import { s } from '@core'
 
-export const SPreviewComponent = styled.div({
+export const SPreviewComponent = s.div({
   marginBottom: 'l',
   border: 'main',
   borderColor: 'grey30',
   borderRadius: 'm',
 })
 
-export const SPreviewComponentContent = styled.div({
+export const SPreviewComponentContent = s.div({
   display: 'flex',
   width: '100%',
   padding: 'l',

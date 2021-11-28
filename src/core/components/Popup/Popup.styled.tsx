@@ -1,6 +1,6 @@
-import { styled } from '../../utils'
+import { s } from '../../utils'
 
-export const SPopupWrapper = styled.div({
+export const SPopupWrapper = s.div({
   position: 'fixed',
   top: 0,
   left: 0,
@@ -14,7 +14,7 @@ export const SPopupWrapper = styled.div({
   zIndex: 9999,
 })
 
-export const SPopupCloser = styled.div({
+export const SPopupCloser = s.div({
   position: 'absolute',
   top: 0,
   left: 0,
@@ -24,7 +24,7 @@ export const SPopupCloser = styled.div({
   cursor: 'pointer'
 })
 
-export const SPopup = styled.div({
+export const SPopup = s.div({
   position: 'relative',
   width: '100%',
   borderRadius: 'm',
@@ -33,33 +33,33 @@ export const SPopup = styled.div({
   maxWidth: '640px',
 })
 
-export const SPopupHeader = styled.div({
+export const SPopupHeader = s.div({
   display: 'flex',
   borderBottom: 'main',
   color: 'primary',
   alignItems: 'center'
 })
 
-export const SPopupHeaderContent = styled.div({
+export const SPopupHeaderContent = s.div({
   flexGrow: 1,
   paddingY: 's',
   paddingX: 'm',
   alignItems: 'center'
 })
 
-export const SPopupContent = styled.div({
+export const SPopupContent = s.div({
   display: 'flex',
   paddingY: 's',
   paddingX: 'm',
 })
 
-export const SPopupFooter = styled.div({
+export const SPopupFooter = s.div({
   display: 'flex',
   paddingY: 's',
   paddingX: 'm',
 })
 
-export const SPopupCloseButton = styled.div({
+export const SPopupCloseButton = s.div({
   cursor: 'pointer',
   paddingX: 's'
 })

@@ -1,7 +1,7 @@
 import React from 'react'
-import { styled } from '../../../utils'
+import { s } from '../../../utils'
 
-export const SCol = styled.div(({ width }: any) => ({
+export const SCol = s.div(({ width }: any) => ({
   position: 'relative',
   display: 'flex',
   flexDirection: 'column',

@@ -1,6 +1,6 @@
-import { styled } from '@core'
+import { s } from '@core'
 
-export const SPreview = styled.div(() => ({
+export const SPreview = s.div(() => ({
   display: 'flex',
   flexDirection: 'column',
   width: '100%',

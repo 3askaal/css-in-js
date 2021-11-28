@@ -1,10 +1,10 @@
 import React from 'react'
-import { styled } from '@core'
+import { s } from '@core'
 import { useLocation } from 'react-router-dom'
 import { Sidebar } from '..'
 import { Wrapper } from '../../core'
 
-const SSiteWrapper = styled.div({
+const SSiteWrapper = s.div({
   display: 'flex',
   width: '100%',
 })

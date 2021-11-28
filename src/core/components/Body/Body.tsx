@@ -1,7 +1,7 @@
 import React from 'react'
-import { styled } from '../../utils'
+import { s } from '../../utils'
 
-export const SBody = styled.div({
+export const SBody = s.div({
   display: 'flex',
   flexDirection: 'column',
 

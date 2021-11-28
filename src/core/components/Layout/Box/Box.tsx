@@ -1,7 +1,7 @@
 import React from 'react'
-import { styled } from '../../../utils'
+import { s } from '../../../utils'
 
-export const SBox: any = styled.div()
+export const SBox: any = s.div()
 
 export const Box = (props: any) => {
   return <SBox sRef="Box" {...props} />

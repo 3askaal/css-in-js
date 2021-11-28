@@ -1,5 +1,5 @@
 import React from 'react'
-import { styled } from '../../utils'
+import { s } from '../../utils'
 
 const TitleSizes: { [key: string]: string } = {
   1: '2.5em',
@@ -10,7 +10,7 @@ const TitleSizes: { [key: string]: string } = {
   6: '1em',
 }
 
-const STitle = styled.h1(({ theme, level }: any) => ({
+const STitle = s.h1(({ theme, level }: any) => ({
   fontFamily: theme.fonts.title || 'inherit',
   fontWeight: 'bold',
   fontSize: TitleSizes[level],

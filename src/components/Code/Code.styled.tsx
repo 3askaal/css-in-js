@@ -1,6 +1,6 @@
-import { styled } from '@core'
+import { s } from '@core'
 
-export const SCode = styled.div(({ inline }: any) => ({
+export const SCode = s.div(({ inline }: any) => ({
   flexDirection: 'column',
   backgroundColor: 'code',
   fontFamily: 'code',

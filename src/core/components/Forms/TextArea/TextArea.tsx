@@ -1,8 +1,8 @@
 import React, { ReactElement, FC, useEffect, useRef } from 'react'
-import { styled } from '../../../utils'
+import { s } from '../../../utils'
 import { FormElementReset } from '../reset'
 
-export const STextArea = styled.textarea({
+export const STextArea = s.textarea({
   ...FormElementReset,
   display: 'flex',
   border: 'thick',

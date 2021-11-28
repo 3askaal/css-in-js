@@ -1,7 +1,7 @@
-import { styled } from '@core'
+import { s } from '@core'
 import { rgba } from '../../core'
 
-export const SSidebar = styled.div(({ isOpen }: any) => ({
+export const SSidebar = s.div(({ isOpen }: any) => ({
   position: 'fixed',
   display: 'flex',
   flexDirection: 'column',
@@ -27,11 +27,11 @@ export const SSidebar = styled.div(({ isOpen }: any) => ({
   },
 }))
 
-export const SSidebarContent = styled.div({
+export const SSidebarContent = s.div({
   overflowY: 'scroll',
 })
 
-export const SSidebarToggle = styled.button({
+export const SSidebarToggle = s.button({
   display: ['flex', null, null, null, 'none'],
   position: 'absolute',
   alignItems: 'center',
@@ -46,7 +46,7 @@ export const SSidebarToggle = styled.button({
   backgroundColor: 'grey10',
 })
 
-export const SSidebarCloser = styled.div(({ theme }: any) => ({
+export const SSidebarCloser = s.div(({ theme }: any) => ({
   backgroundColor: rgba(theme.colors.black, 0.25),
   position: 'fixed',
   top: 0,

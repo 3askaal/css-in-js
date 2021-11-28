@@ -1,6 +1,6 @@
-import { styled } from '../../../utils'
+import { s } from '../../../utils'
 
-export const SCheckbox = styled.div(
+export const SCheckbox = s.div(
   {
     position: 'relative',
     display: 'flex',
@@ -20,7 +20,7 @@ export const SCheckbox = styled.div(
   '_checkbox',
 )
 
-export const SCheckboxIndicator = styled.div(
+export const SCheckboxIndicator = s.div(
   {
     width: '100%',
     height: '100%',
@@ -34,7 +34,7 @@ export const SCheckboxIndicator = styled.div(
   '_indicator',
 )
 
-export const SCheckboxInput = styled.input(
+export const SCheckboxInput = s.input(
   {
     display: 'none',
   },
@@ -42,7 +42,7 @@ export const SCheckboxInput = styled.input(
   '_input',
 )
 
-export const SCheckboxLabel = styled.div(
+export const SCheckboxLabel = s.div(
   {
     marginLeft: 's',
   },
@@ -50,7 +50,7 @@ export const SCheckboxLabel = styled.div(
   '_label',
 )
 
-export const SCheckboxWrapper = styled.label(
+export const SCheckboxWrapper = s.label(
   {
     display: 'flex',
     alignItems: 'center',

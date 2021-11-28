@@ -1,7 +1,7 @@
 import React from 'react'
-import { styled } from '../../../utils'
+import { s } from '../../../utils'
 
-export const SContainer = styled.div({
+export const SContainer = s.div({
   position: 'relative',
   display: 'flex',
   flexDirection: 'column',

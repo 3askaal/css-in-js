@@ -1,6 +1,6 @@
-import { styled } from '../../utils'
+import { s } from '../../utils'
 
-export const SMenuItem = styled.div({
+export const SMenuItem = s.div({
   display: 'flex',
   height: '100%',
   alignItems: 'center',

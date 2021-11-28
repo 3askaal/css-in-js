@@ -1,10 +1,10 @@
 import React from 'react'
-import { styled } from '@core'
+import { s } from '@core'
 import { render } from '@tests'
 
 describe('styled', () => {
   test('with default styles', () => {
-    const StyledEl = styled.button({
+    const StyledEl = s.button({
       color: 'red',
     })
 
@@ -14,7 +14,7 @@ describe('styled', () => {
   })
 
   test('with variant styles', () => {
-    const StyledEl = styled.div(
+    const StyledEl = s.div(
       {
         color: 'red',
       },
@@ -27,7 +27,7 @@ describe('styled', () => {
   })
 
   test('overriding styles inline', () => {
-    const StyledEl = styled.button({
+    const StyledEl = s.button({
       color: 'red',
     })
 
@@ -39,8 +39,8 @@ describe('styled', () => {
     expect(style.color).toBe('green')
   })
 
-  test('overriding default styled from theme', () => {
-    const StyledEl = styled.button(
+  test('overriding default s from theme', () => {
+    const StyledEl = s.button(
       {
         color: 'red',
       },
@@ -65,7 +65,7 @@ describe('styled', () => {
   })
 
   test('adding and applying variants from the theme', () => {
-    const StyledEl = styled.button(
+    const StyledEl = s.button(
       {
         color: 'red',
       },
@@ -92,7 +92,7 @@ describe('styled', () => {
   })
 
   test('overriding styles of children', () => {
-    const StyledChild = styled.button(
+    const StyledChild = s.button(
       {
         color: 'red',
       },
@@ -100,7 +100,7 @@ describe('styled', () => {
       '_child',
     )
 
-    const StyledParent = styled.div({
+    const StyledParent = s.div({
       bg: 'blue',
     })
 

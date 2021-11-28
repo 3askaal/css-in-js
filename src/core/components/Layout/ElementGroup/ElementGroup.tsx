@@ -1,7 +1,7 @@
 import React from 'react'
-import { styled } from '../../../utils'
+import { s } from '../../../utils'
 
-export const SElementGroup = styled.div({
+export const SElementGroup = s.div({
   display: 'flex',
   flexDirection: 'row',
 

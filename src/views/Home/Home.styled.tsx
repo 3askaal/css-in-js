@@ -1,6 +1,6 @@
-import { styled } from '@core'
+import { s } from '@core'
 
-export const SHomeMenu = styled.div({
+export const SHomeMenu = s.div({
   display: 'flex',
   justifyContent: 'center',
   margin: 'm',
@@ -19,7 +19,7 @@ export const SHomeMenu = styled.div({
   },
 })
 
-export const SHome = styled.div({
+export const SHome = s.div({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -29,7 +29,7 @@ export const SHome = styled.div({
   height: '100vh',
 })
 
-export const SHomeBackground = styled.div({
+export const SHomeBackground = s.div({
   position: 'absolute',
   top: 0,
   right: 0,

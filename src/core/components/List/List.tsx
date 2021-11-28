@@ -1,7 +1,7 @@
 import React, { ReactElement, FC } from 'react'
-import { styled } from '../../utils'
+import { s } from '../../utils'
 
-export const SList = styled.div({
+export const SList = s.div({
   display: 'flex',
   flexDirection: 'column',
   width: '100%',
@@ -10,7 +10,7 @@ export const SList = styled.div({
   borderColor: 'primary',
 })
 
-export const SListTitle = styled.div({
+export const SListTitle = s.div({
   display: 'flex',
   fontWeight: 'bold',
   textTransform: 'uppercase',

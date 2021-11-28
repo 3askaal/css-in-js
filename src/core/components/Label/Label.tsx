@@ -1,7 +1,7 @@
 import React from 'react'
-import { styled } from '../../utils'
+import { s } from '../../utils'
 
-export const SLabel = styled.div(
+export const SLabel = s.div(
   {
     display: 'flex',
     paddingY: 'xxs',

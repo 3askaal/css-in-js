@@ -1,7 +1,7 @@
 import React from 'react'
-import { styled } from '../../../utils'
+import { s } from '../../../utils'
 
-export const SWrapper = styled.div({
+export const SWrapper = s.div({
   display: 'flex',
   width: '100%',
   height: '100%',

@@ -1,7 +1,7 @@
 import React, { ReactElement, FC } from 'react'
-import { styled } from '../../utils'
+import { s } from '../../utils'
 
-export const SProgress = styled.div({
+export const SProgress = s.div({
   display: 'flex',
   height: '8px',
   flexGrow: 1,
@@ -9,7 +9,7 @@ export const SProgress = styled.div({
   borderColor: 'primary',
 })
 
-export const SProgressActive = styled.div(({ amount }: any) => ({
+export const SProgressActive = s.div(({ amount }: any) => ({
   display: 'inline-flex',
   height: '100%',
   width: amount && `${amount}%`,

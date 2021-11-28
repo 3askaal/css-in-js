@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useRef } from 'react'
-import { styled, Body, Title } from '@core'
+import { s, Body, Title } from '@core'
 import { kebabCase } from 'lodash'
 import { NavContext } from '../../context/NavContext'
 
-export const SSection = styled.div({
+export const SSection = s.div({
   display: 'flex',
   flexDirection: 'column',
   width: '100%',

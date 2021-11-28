@@ -1,8 +1,8 @@
 import React from 'react'
-import { styled } from '../../../utils'
+import { s } from '../../../utils'
 import { SCol } from '..'
 
-export const SRow = styled.div(
+export const SRow = s.div(
   ({ theme, s: { flexWrap = 'wrap' } = {}, gutter = 'm' }: any) => ({
     display: 'flex',
     flexDirection: 'row',
