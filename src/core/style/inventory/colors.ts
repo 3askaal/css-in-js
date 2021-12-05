@@ -39,5 +39,8 @@ export const colors: Colors = {
   negative: mix('red', primary, 0.1),
   misc: {
     overlay: rgba('black', .25)
+  },
+  element: {
+    background: 'black'
   }
 }

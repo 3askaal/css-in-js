@@ -2,12 +2,14 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle: any = createGlobalStyle<any>(({ theme }) => {
   const rootFontSizeStyling: any = {
-    fontSize: theme.rootFontSizes[0],
+    fontSize: theme?.rootFontSizes ? theme.rootFontSizes[0] : null,
   }
 
-  theme.breakpoints.forEach((bp: any, index: number) => {
-    rootFontSizeStyling[`@media (min-width: ${bp})`] = {
-      fontSize: theme.rootFontSizes[index + 1],
+  theme?.breakpoints.forEach((bp: any, index: number) => {
+    if (theme.rootFontSizes?.length) {
+      rootFontSizeStyling[`@media (min-width: ${bp})`] = {
+        fontSize: theme?.rootFontSizes[index + 1],
+      }
     }
   })
 

@@ -14,7 +14,7 @@ export const IdealGlobalStyle: any = createGlobalStyle<any>(({ theme }) =>
       minHeight: '100%',
       '-webkit-font-smoothing': 'antialiased',
       '-moz-osx-font-smoothing': 'grayscale',
-      fontSize: theme.rootFontSizes,
+      fontSize: theme?.rootFontSizes,
     },
 
     body: {

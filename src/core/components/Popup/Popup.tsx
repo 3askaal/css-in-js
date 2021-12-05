@@ -19,9 +19,8 @@ export const Popup: FC<PopupProps> = ({
   const [isOpen, setIsOpen] = useState(true)
 
   const onCloseHandler = () => {
-    setIsOpen(false)
-
     if (onClose) {
+      setIsOpen(false)
       onClose()
     }
   }
@@ -39,10 +38,7 @@ export const Popup: FC<PopupProps> = ({
               <Title level={4}>{header}</Title>
             </SPopupHeaderContent>
             <SPopupCloseButton
-              onClick={() => {
-                setIsOpen(false)
-                onClose()
-              }}
+              onClick={onCloseHandler}
             >
               <XIcon />
             </SPopupCloseButton>
@@ -55,7 +51,11 @@ export const Popup: FC<PopupProps> = ({
         {actions?.length ? (
           <SPopupFooter>
             <Row gutter="s" s={{flexWrap: 'nowrap'}}>
-              {actions.map((action: any) => <Col width={`${100 / actions.length}`}>{action}</Col>)}
+              {actions.map((action: any) => (
+                <Col width={`${100 / actions.length}`} onClick={onCloseHandler}>
+                  {action}
+                </Col>
+              ))}
             </Row>
           </SPopupFooter>
         ) : null}
