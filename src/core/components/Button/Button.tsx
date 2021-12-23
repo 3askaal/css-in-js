@@ -62,11 +62,11 @@ export const SButton: any = s.button(
     },
     isPositive: {
       borderColor: 'positive',
-      color: 'positive',
+      backgroundColor: 'positive',
     },
     isNegative: {
       borderColor: 'positive',
-      color: 'positive',
+      backgroundColor: 'positive',
     },
   },
 )
