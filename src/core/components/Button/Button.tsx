@@ -60,6 +60,14 @@ export const SButton: any = s.button(
     isBlock: {
       width: '100%',
     },
+    isPositive: {
+      borderColor: 'positive',
+      color: 'positive',
+    },
+    isNegative: {
+      borderColor: 'positive',
+      color: 'positive',
+    },
   },
 )
 
