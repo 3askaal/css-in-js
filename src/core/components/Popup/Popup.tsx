@@ -51,8 +51,8 @@ export const Popup: FC<PopupProps> = ({
         {actions?.length ? (
           <SPopupFooter>
             <Row gutter="s" s={{flexWrap: 'nowrap'}}>
-              {actions.map((action: any) => (
-                <Col width={`${100 / actions.length}`} onClick={onCloseHandler}>
+              {actions.map((action: any, index: number) => (
+                <Col key={`action-${index}`} width={`${100 / actions.length}`} onClick={onCloseHandler}>
                   {action}
                 </Col>
               ))}
