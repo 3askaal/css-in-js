@@ -65,7 +65,7 @@ export const Select: FC<SelectProps> = ({
         {options &&
           options.map((option: SelectOptionProps, index: number) => (
             <option
-              value={JSON.stringify(index)}
+              value={option.value || index}
               key={keyGen()}
               selected={option.selected}
               data-testid="select-option"
