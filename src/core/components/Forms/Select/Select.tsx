@@ -1,5 +1,5 @@
 import React, { ReactElement, FC, useRef, useState } from 'react'
-import { findIndex, forEach } from 'lodash'
+import { forEach } from 'lodash'
 import { ChevronDown as ChevronDownIcon } from 'react-feather'
 import { SSelect, SSelectWrapper, SSelectIcon } from './Select.styled'
 import { keyGen } from '../../../utils'
@@ -23,18 +23,18 @@ export const Select: FC<SelectProps> = ({
   multi,
   block,
   onChange,
-  value: defaultValue,
+  value,
 }: SelectProps): ReactElement => {
   const selectRef: any = useRef()
-  const [currentValue, setCurrentValue] = useState(defaultValue)
+  const [currentValue, setCurrentValue] = useState(value || null)
 
   function onSelectChange() {
     if (multi) {
       const indexes: any[] = []
 
-      forEach(selectRef?.current?.options, (option: any, index: number) => {
+      forEach(selectRef.current.options, (option: any, index: number) => {
         if (option.selected) {
-          indexes.push(index)
+          indexes.push(option.value || index)
         }
       })
 
@@ -46,9 +46,12 @@ export const Select: FC<SelectProps> = ({
 
       onChange(values)
     } else {
-      const index: number = findIndex(selectRef?.current?.options, 'selected')
-      setCurrentValue(index.toString())
-      onChange(options[index].value)
+      forEach(selectRef.current.options, (option: any, index: number) => {
+        if (option.selected) {
+          setCurrentValue(option.value || index)
+          onChange(option.value || index)
+        }
+      })
     }
   }
 
