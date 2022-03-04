@@ -1,6 +1,5 @@
 import { filter, map } from 'lodash'
 import React, { FC, ReactElement, useState } from 'react'
-// import { keyGen } from 'utils'
 import { SCheckboxGroup } from './CheckboxGroup.styled'
 import { Checkbox, CheckboxProps } from '../Checkbox/Checkbox'
 import { keyGen } from '../../../utils'

@@ -2,7 +2,6 @@ import React, { ReactElement, FC, useRef, useState } from 'react'
 import { forEach } from 'lodash'
 import { ChevronDown as ChevronDownIcon } from 'react-feather'
 import { SSelect, SSelectWrapper, SSelectIcon } from './Select.styled'
-import { keyGen } from '../../../utils'
 
 interface SelectOptionProps {
   label: string
@@ -28,7 +27,9 @@ export const Select: FC<SelectProps> = ({
   const selectRef: any = useRef()
   const [currentValue, setCurrentValue] = useState(value || null)
 
-  function onSelectChange() {
+  const onSelectChange = (event: any) => {
+    const { value: newValue } = event.target
+
     if (multi) {
       const indexes: any[] = []
 
@@ -46,12 +47,14 @@ export const Select: FC<SelectProps> = ({
 
       onChange(values)
     } else {
-      forEach(selectRef.current.options, (option: any, index: number) => {
-        if (option.selected) {
-          setCurrentValue(option.value || index)
-          onChange(option.value || index)
-        }
-      })
+      onChange(newValue)
+      setCurrentValue(newValue)
+      // forEach(selectRef.current.options, (option: any, index: number) => {
+      //   if (option.selected) {
+      //     setCurrentValue(option.value || index)
+      //     onChange(option.value || index)
+      //   }
+      // })
     }
   }
 
@@ -69,7 +72,7 @@ export const Select: FC<SelectProps> = ({
           options.map((option: SelectOptionProps, index: number) => (
             <option
               value={option.value || index}
-              key={keyGen()}
+              key={`selectOption${index}`}
               selected={option.selected}
               data-testid="select-option"
             >
