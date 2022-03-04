@@ -25,7 +25,6 @@ export const Select: FC<SelectProps> = ({
   value,
 }: SelectProps): ReactElement => {
   const selectRef: any = useRef()
-  const [currentValue, setCurrentValue] = useState(value || null)
 
   const onSelectChange = (event: any) => {
     const { value: newValue } = event.target
@@ -39,8 +38,6 @@ export const Select: FC<SelectProps> = ({
         }
       })
 
-      setCurrentValue(indexes.join(','))
-
       const values = indexes.map((index: number) => {
         return options[index].value
       })
@@ -48,7 +45,6 @@ export const Select: FC<SelectProps> = ({
       onChange(values)
     } else {
       onChange(newValue)
-      setCurrentValue(newValue)
       // forEach(selectRef.current.options, (option: any, index: number) => {
       //   if (option.selected) {
       //     setCurrentValue(option.value || index)
@@ -65,14 +61,14 @@ export const Select: FC<SelectProps> = ({
         multiple={multi}
         onChange={onSelectChange}
         data-testid="select"
-        value={currentValue}
+        value={value}
         ref={selectRef}
       >
         {options &&
-          options.map((option: SelectOptionProps, index: number) => (
+          options.map((option: SelectOptionProps) => (
             <option
-              value={option.value || index}
-              key={`selectOption${index}`}
+              value={option.value}
+              key={`selectOption${option.value}`}
               selected={option.selected}
               data-testid="select-option"
             >
