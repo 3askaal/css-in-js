@@ -9,11 +9,11 @@ export const SSpacer = s.div(
 
     '> * + *': {
       ...(flexDirection === 'column' && {
-        marginTop: theme.space[size],
+        marginTop: theme.space && theme.space[size],
       }),
 
       ...(flexDirection === 'row' && {
-        marginLeft: theme.space[size],
+        marginLeft: theme.space && theme.space[size],
       }),
     },
   }),

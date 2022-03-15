@@ -17,7 +17,7 @@ export default () => {
           fonts: {
             ...theme.fonts,
             logo: "'Kaushan Script', Helvetica, Arial, sans-serif",
-          },
+          }
         }}
       >
         <SiteWrapper>
