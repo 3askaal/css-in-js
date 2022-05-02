@@ -17,8 +17,10 @@ export const SListItem = s.div(
       cursor: 'not-allowed',
       pointerEvents: 'not-allowed',
 
-      ':hover': {
-        backgroundColor: 'primaryDark',
+      '@media (hover: hover)': {
+        ':hover': {
+          backgroundColor: 'primaryDark',
+        },
       },
     },
   },

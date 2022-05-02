@@ -22,9 +22,11 @@ export const SButton: any = s.button(
     border: 'main',
     borderColor: 'primary',
 
-    ':hover': {
-      backgroundColor: 'primaryDark',
-      borderColor: 'primaryDark',
+    '@media (hover: hover)': {
+      ':hover': {
+        backgroundColor: 'primaryDark',
+        borderColor: 'primaryDark',
+      },
     },
 
     '> * + *': {
@@ -36,9 +38,11 @@ export const SButton: any = s.button(
       backgroundColor: 'secondary',
       borderColor: 'secondary',
 
-      ':hover': {
-        backgroundColor: 'secondaryDark',
-        borderColor: 'secondaryDark',
+      '@media (hover: hover)': {
+        ':hover': {
+          backgroundColor: 'secondaryDark',
+          borderColor: 'secondaryDark',
+        },
       },
     },
     isOutline: {
@@ -47,10 +51,12 @@ export const SButton: any = s.button(
       borderColor: 'primary',
       color: 'primary',
 
-      ':hover': {
-        backgroundColor: 'primaryDark',
-        borderColor: 'primaryDark',
-        color: 'white',
+      '@media (hover: hover)': {
+        ':hover': {
+          backgroundColor: 'primaryDark',
+          borderColor: 'primaryDark',
+          color: 'white',
+        },
       },
     },
     isDisabled: {

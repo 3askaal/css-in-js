@@ -17,8 +17,10 @@ export const SBody = s.div({
   a: {
     color: 'primary',
 
-    '&:hover': {
-      color: 'primaryDark',
+    '@media (hover: hover)': {
+      ':hover': {
+        color: 'primaryDark',
+      },
     },
   },
 
