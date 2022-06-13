@@ -36,6 +36,7 @@
     "react-apollo": "^3.1.5",
     "react-app-rewire-aliases": "^0.2.0",
     "react-app-rewired": "^2.1.6",
+    "react-dom": "^18.1.0",
     "react-element-to-jsx-string": "^14.3.1",
     "react-feather": "^2.0.8",
     "react-intersection-observer": "^8.31.0",
