@@ -47,7 +47,9 @@
     "remark-slug": "^6.0.0",
     "reset-css": "^5.0.1",
     "shortid": "^2.2.15",
-    "uniqid": "^5.2.0"
+    "uniqid": "^5.2.0",
+    "styled-components": "^5.1.1",
+    "styled-system": "^5.1.5"
   },
   "scripts": {
     "start": "react-app-rewired start",
