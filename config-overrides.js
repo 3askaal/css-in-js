@@ -1,5 +1,6 @@
 const path = require('path')
 const slug = require('remark-slug')
+const TerserPlugin = require('terser-webpack-plugin');
 const {
   override,
   addWebpackModuleRule,
@@ -33,7 +34,14 @@ module.exports = {
       ['@tests$']: path.resolve(__dirname, 'src/tests'),
     }),
     (config) => {
-      config.optimization.minimize = 'preserve';
+      config.optimization.minimize = true;
+      config.optimization.minimizer = [
+        new TerserPlugin({
+          terserOptions: {
+            keep_fnames: true
+          }
+        })
+      ]
       return config;
     }
   ),
