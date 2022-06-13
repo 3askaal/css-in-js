@@ -38,7 +38,9 @@ module.exports = {
       config.optimization.minimizer = [
         ...config.optimization.minimizer,
         new TerserPlugin({
-          keep_fnames: true
+          terserOptions: {
+            keep_fnames: true
+          }
         })
       ];
 
