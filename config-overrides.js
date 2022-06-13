@@ -5,6 +5,7 @@ const {
   addWebpackModuleRule,
   addWebpackAlias,
   setWebpackOptimizationSplitChunks,
+
 } = require('customize-cra')
 
 module.exports = {
@@ -23,7 +24,7 @@ module.exports = {
     }),
     setWebpackOptimizationSplitChunks({
       chunks: 'all',
-      name: true,
+      name: false,
     }),
     addWebpackAlias({
       ['@core$']: path.resolve(__dirname, 'src/core'),
