@@ -5,10 +5,9 @@ export const SCol = s.div(({ width }: any) => ({
   position: 'relative',
   display: 'flex',
   flexDirection: 'column',
-  flexGrow: 1,
+  flexGrow: width ? 0 : 1,
 
   ...(width && {
-    flexGrow: 0,
     flexBasis: `${width}%`,
     flexShrink: 0,
   }),
