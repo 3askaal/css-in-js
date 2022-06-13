@@ -1,4 +1,4 @@
-import React, { ReactElement, FC, useRef, useState } from 'react'
+import React, { ReactElement, FC, useRef } from 'react'
 import { forEach } from 'lodash'
 import { ChevronDown as ChevronDownIcon } from 'react-feather'
 import { SSelect, SSelectWrapper, SSelectIcon } from './Select.styled'
