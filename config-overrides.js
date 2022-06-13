@@ -6,7 +6,6 @@ const {
   addWebpackModuleRule,
   addWebpackAlias,
   setWebpackOptimizationSplitChunks,
-
 } = require('customize-cra')
 
 module.exports = {
