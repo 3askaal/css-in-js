@@ -55,7 +55,7 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
+    "build": "NOVE_ENV=development react-app-rewired build",
     "build:lib": "tsc --p tsconfig.dist.json",
     "test": "react-app-rewired test",
     "test:cov": "react-app-rewired test --coverage --watchAll=false",
