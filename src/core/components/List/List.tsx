@@ -32,3 +32,5 @@ export const List: FC<any> = ({
     </SList>
   )
 }
+
+List.displayName = 'List'

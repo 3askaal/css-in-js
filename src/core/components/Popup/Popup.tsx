@@ -63,3 +63,5 @@ export const Popup: FC<PopupProps> = ({
     </SPopupWrapper>
   ) : null
 }
+
+Popup.displayName = 'Popup'

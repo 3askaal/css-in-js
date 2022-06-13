@@ -22,3 +22,5 @@ export const SSpacer = s.div(
 export const Spacer = (props: any) => {
   return <SSpacer sRef="Spacer" {...props} />
 }
+
+Spacer.displayName = 'Spacer'

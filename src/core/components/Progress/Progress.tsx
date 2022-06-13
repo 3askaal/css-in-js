@@ -23,3 +23,5 @@ export const Progress: FC<any> = ({ amount, ...props }: any): ReactElement => {
     </SProgress>
   )
 }
+
+Progress.displayName = 'Progress'

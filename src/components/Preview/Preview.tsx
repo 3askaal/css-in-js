@@ -27,3 +27,5 @@ export const Preview: FC<PreviewProps> = ({
     </SPreview>
   )
 }
+
+Preview.displayName = 'Preview'

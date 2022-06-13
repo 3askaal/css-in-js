@@ -15,3 +15,5 @@ export const SLink = s.a({
 export const Link: FC<any> = ({ to, ...props }: any): ReactElement => {
   return <SLink sRef="Link" href={to || null} {...props} />
 }
+
+Link.displayName = 'Link'

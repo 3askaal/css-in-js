@@ -24,3 +24,5 @@ export const SRow = s.div(
 export const Row = (props: any) => {
   return <SRow sRef="Row" {...props} />
 }
+
+Row.displayName = 'Row'

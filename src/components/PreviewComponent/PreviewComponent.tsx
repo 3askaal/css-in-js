@@ -51,3 +51,5 @@ export const PreviewComponent: FC<PreviewComponentProps> = ({
     </SPreviewComponent>
   )
 }
+
+PreviewComponent.displayName = 'PreviewComponent'

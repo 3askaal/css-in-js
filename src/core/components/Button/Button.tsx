@@ -80,3 +80,5 @@ export const SButton: any = s.button(
 export const Button: FC<any> = ({ ...props }: any): ReactElement => {
   return <SButton sRef="Button" {...props} />
 }
+
+Button.displayName = 'Button'

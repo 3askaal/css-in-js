@@ -20,3 +20,5 @@ const STitle = s.h1(({ theme, level }: any) => ({
 export const Title = ({ level = 3, ...props }: any) => {
   return <STitle sRef="Title" as={`h${level}`} level={level} {...props} />
 }
+
+Title.displayName = 'Title'

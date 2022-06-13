@@ -38,3 +38,5 @@ export const ListItem: FC<any> = ({
     </SListItem>
   )
 }
+
+ListItem.displayName = 'ListItem'

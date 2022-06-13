@@ -1,6 +1,5 @@
 const path = require('path')
 const slug = require('remark-slug')
-const WebpackReactComponentNamePlugin = require('webpack-react-component-name');
 const {
   override,
   addWebpackModuleRule,
@@ -32,10 +31,7 @@ module.exports = {
       ['@components$']: path.resolve(__dirname, 'src/components'),
       ['@views$']: path.resolve(__dirname, 'src/views'),
       ['@tests$']: path.resolve(__dirname, 'src/tests'),
-    }),
-    addWebpackPlugin(
-      new WebpackReactComponentNamePlugin()
-    )
+    })
   ),
   jest: (config) => {
     config.transformIgnorePatterns = [

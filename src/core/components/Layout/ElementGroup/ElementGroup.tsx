@@ -33,3 +33,5 @@ export const SElementGroup = s.div({
 export const ElementGroup = (props: any) => {
   return <SElementGroup sRef="ElementGroup" {...props} />
 }
+
+ElementGroup.displayName = 'ElementGroup'

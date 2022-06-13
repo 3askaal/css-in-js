@@ -12,3 +12,5 @@ const SText = s.p(({ as }: any) => ({
 export const Text = ({ type = 'p', ...props }: any) => {
   return <SText sRef="Text" as={type} {...props} />
 }
+
+Text.displayName = 'Text'
