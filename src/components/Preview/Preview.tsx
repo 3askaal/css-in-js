@@ -5,8 +5,6 @@ import { SPreview } from './Preview.styled'
 
 export interface PreviewProps {
   title?: string
-  id?: string
-  description?: string
   children?: any
 }
 
