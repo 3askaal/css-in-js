@@ -36,12 +36,14 @@ module.exports = {
     (config) => {
       config.optimization.minimize = true;
       config.optimization.minimizer = [
+        ...config.optimization.minimizer,
         new TerserPlugin({
           terserOptions: {
             keep_fnames: true
           }
         })
-      ]
+      ];
+
       return config;
     }
   ),
