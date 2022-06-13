@@ -32,6 +32,10 @@ module.exports = {
       ['@views$']: path.resolve(__dirname, 'src/views'),
       ['@tests$']: path.resolve(__dirname, 'src/tests'),
     }),
+    (config) => {
+      config.optimization.minimize = 'preserve';
+      return config;
+    }
   ),
   jest: (config) => {
     config.transformIgnorePatterns = [
