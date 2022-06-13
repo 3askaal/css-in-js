@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import {
   List,
   Button,
@@ -22,12 +22,12 @@ import {
   TextArea,
   Progress,
   ElementGroup,
-} from '@core'
-import { Preview, Section } from '../../components'
+} from '@core';
+import { Preview, Section } from '../../components';
 
 export const ComponentsView = () => {
-  const [modalOpened, setModalOpened] = useState<any>({})
-  const toggleModalOpened = (instance: number) => setModalOpened({...modalOpened, [instance]: !modalOpened[instance]})
+  const [modalOpened, setModalOpened] = useState<any>({});
+  const toggleModalOpened = (instance: number) => setModalOpened({...modalOpened, [instance]: !modalOpened[instance]});
 
   return (
     <Container s={{ paddingY: 'xxl' }} data-testid="components-view">
@@ -306,5 +306,5 @@ export const ComponentsView = () => {
         </Section>
       </Spacer>
     </Container>
-  )
-}
+  );
+};

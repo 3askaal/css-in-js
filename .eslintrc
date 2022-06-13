@@ -4,10 +4,9 @@
     "project": "./tsconfig.json"
   },
   "extends": [
+    "airbnb",
     "airbnb-typescript",
-    "prettier",
-    "prettier/react",
-    "prettier/@typescript-eslint"
+    "prettier"
   ],
   "plugins": [
     "prettier",
@@ -17,14 +16,15 @@
     "@typescript-eslint"
   ],
   "rules": {
-    "no-underscore-dangle": [0],
-    "react/jsx-props-no-spreading": [0],
+    "arrow-body-style": [0],
     "import/prefer-default-export": [0],
     "import/no-cycle": [0],
     "import/no-extraneous-dependencies": [0],
-    "import/no-unresolved": [0],
+    "react/jsx-props-no-spreading": [0],
     "react/require-default-props": [0],
     "react/jsx-no-bind": [0],
-    "react/no-array-index-key": [0]
+    "react/no-array-index-key": [0],
+    "react/function-component-definition": [0],
+    "react/jsx-no-constructed-context-values": [0] // TODO: Enable rule and fix actual problem (performance issue)
   }
 }
