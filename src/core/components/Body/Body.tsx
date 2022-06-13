@@ -30,3 +30,5 @@ export const SBody = s.div({
 })
 
 export const Body = ({ ...props }: any) => <SBody sRef="Body" {...props} />
+
+Body.displayName = 'Body'

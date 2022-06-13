@@ -27,3 +27,5 @@ export const SLabel = s.div(
 )
 
 export const Label = ({ ...props }: any) => <SLabel {...props} />
+
+Label.displayName = 'Label'

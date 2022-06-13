@@ -54,3 +54,5 @@ export const Checkbox: FC<CheckboxProps> = ({
     </SCheckboxWrapper>
   )
 }
+
+Checkbox.displayName = 'Checkbox'

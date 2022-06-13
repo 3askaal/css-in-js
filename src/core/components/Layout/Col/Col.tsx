@@ -16,3 +16,5 @@ export const SCol = s.div(({ width }: any) => ({
 export const Col = (props: any) => {
   return <SCol sRef="Col" {...props} />
 }
+
+Col.displayName = 'Col'

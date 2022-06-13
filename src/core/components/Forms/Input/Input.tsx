@@ -27,3 +27,5 @@ export const Input: FC<any> = ({
 Input.defaultProps = {
   type: 'text',
 }
+
+Input.displayName = 'Input'

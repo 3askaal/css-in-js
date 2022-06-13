@@ -6,3 +6,5 @@ export const SBox: any = s.div()
 export const Box = (props: any) => {
   return <SBox sRef="Box" {...props} />
 }
+
+Box.displayName = 'Box'

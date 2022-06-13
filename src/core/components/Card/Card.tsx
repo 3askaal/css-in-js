@@ -36,3 +36,5 @@ export const Card: FC<any> = ({
     </SCard>
   )
 }
+
+Card.displayName = 'Card'

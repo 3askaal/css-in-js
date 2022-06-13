@@ -13,3 +13,5 @@ export const SContainer = s.div({
 export const Container = (props: any) => {
   return <SContainer sRef="Container" {...props} />
 }
+
+Container.displayName = 'Container'

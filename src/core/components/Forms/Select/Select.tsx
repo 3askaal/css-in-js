@@ -82,3 +82,5 @@ export const Select: FC<SelectProps> = ({
     </SSelectWrapper>
   )
 }
+
+Select.displayName = 'Select'

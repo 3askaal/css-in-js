@@ -1,11 +1,12 @@
 const path = require('path')
 const slug = require('remark-slug')
-const TerserPlugin = require('terser-webpack-plugin');
+const WebpackReactComponentNamePlugin = require('webpack-react-component-name');
 const {
   override,
   addWebpackModuleRule,
   addWebpackAlias,
   setWebpackOptimizationSplitChunks,
+  addWebpackPlugin,
 } = require('customize-cra')
 
 module.exports = {
@@ -32,19 +33,9 @@ module.exports = {
       ['@views$']: path.resolve(__dirname, 'src/views'),
       ['@tests$']: path.resolve(__dirname, 'src/tests'),
     }),
-    (config) => {
-      config.optimization.minimize = true;
-      config.optimization.minimizer = [
-        ...config.optimization.minimizer,
-        new TerserPlugin({
-          terserOptions: {
-            keep_fnames: true
-          }
-        })
-      ];
-
-      return config;
-    }
+    addWebpackPlugin(
+      new WebpackReactComponentNamePlugin()
+    )
   ),
   jest: (config) => {
     config.transformIgnorePatterns = [

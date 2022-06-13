@@ -46,3 +46,5 @@ export const TextArea: FC<any> = ({
     />
   )
 }
+
+TextArea.displayName = 'TextArea'

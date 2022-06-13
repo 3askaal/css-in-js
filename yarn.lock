@@ -2731,7 +2731,7 @@ acorn-jsx@^5.3.1:
   resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-5.3.2.tgz#7ed5bb55908b3b2f1bc55c6af1653bada7f07937"
   integrity sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==
 
-acorn-walk@^7.1.1:
+acorn-walk@7.2.0, acorn-walk@^7.1.1:
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/acorn-walk/-/acorn-walk-7.2.0.tgz#0de889a601203909b0fbe07b8938dc21d2e967bc"
   integrity sha512-OPdCF6GsMIP+Az+aWfAAOEt2/+iVDKE7oy6lJ098aoe59oAmK76qV6Gw60SbZ8jHuG2wH058GF4pLFbYamYrVA==
@@ -12895,6 +12895,13 @@ webpack-manifest-plugin@2.2.0:
     lodash ">=3.5 <5"
     object.entries "^1.1.0"
     tapable "^1.0.0"
+
+webpack-react-component-name@^5.0.4:
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/webpack-react-component-name/-/webpack-react-component-name-5.0.4.tgz#03025c672815f2ecbc339cb22ea38c2c15c1c4cc"
+  integrity sha512-rUU7kbLu/R6arHFubvMBBDF6jQbhtSb2Kw9PyA3BzVpXI+CeUyEckcgo0rzShHYpQyaV9R3jWSbiLBWjoREdlA==
+  dependencies:
+    acorn-walk "7.2.0"
 
 webpack-sources@^1.1.0, webpack-sources@^1.3.0, webpack-sources@^1.4.0, webpack-sources@^1.4.1, webpack-sources@^1.4.3:
   version "1.4.3"
