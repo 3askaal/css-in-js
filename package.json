@@ -48,6 +48,7 @@
     "reset-css": "^5.0.1",
     "shortid": "^2.2.15",
     "uniqid": "^5.2.0",
+    "react": "^17.0.2",
     "styled-components": "^5.1.1",
     "styled-system": "^5.1.5"
   },
