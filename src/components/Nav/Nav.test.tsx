@@ -10,13 +10,13 @@ const navItems = [
 
 describe('Nav', () => {
   test('Has items', () => {
-    const { getAllByTestId } = render(
+    const { queryAllByTestId } = render(
       <Nav to="/page1" items={navItems}>
         Page 1
       </Nav>,
     )
 
-    expect(getAllByTestId('nav-sub-item').length).toBe(3)
+    expect(queryAllByTestId('nav-sub-item').length).toBe(3)
   })
 
   test('Can be closed', () => {

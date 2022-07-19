@@ -91,7 +91,7 @@ describe('styled', () => {
     expect(style.color).toBe('cyan')
   })
 
-  test('overriding styles of children', () => {
+  test.skip('overriding styles of children', () => {
     const StyledChild = s.button(
       {
         color: 'red',

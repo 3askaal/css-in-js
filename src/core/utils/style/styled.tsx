@@ -17,12 +17,13 @@ export const styledWrapper = (
   defaultStyles?: any,
   variants?: any,
   sRef?: string,
-) => {
+): any[] => {
   const newProps = { ...props }
   const themeStyles = get(props?.theme?.components, sRef || newProps.sRef)
 
   const styleFunctions: any[] = []
 
+  // TODO: Fix this feature
   // if (newProps.children) {
   //   newProps.children = resolveStylePropOnChildren(
   //     newProps.children,
@@ -53,9 +54,9 @@ export const styledWrapper = (
   return styleFunctions
 }
 
-export const s: any = mapValues(
+export const s = mapValues(
   styledComponents,
-  (value: () => any): any => {
+  (value) => {
     return wrap(value, (func: any, ...declProps) => {
       return func((props: any) => {
         return styledWrapper(props, ...declProps)
