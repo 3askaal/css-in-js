@@ -3,12 +3,12 @@ import { render } from '@tests'
 import { SiteWrapper } from '@components'
 
 describe('Sitewrapper', () => {
-  test('has no sidebar & wrapper', () => {
+  it('renders without sidebar & wrapper', () => {
     const { queryByTestId } = render(<SiteWrapper />)
     expect(queryByTestId('sidebar')).toBeNull()
   })
 
-  test('has sidebar & wrapper', () => {
+  it('renders with sidebar & wrapper', () => {
     const { queryByTestId } = render(<SiteWrapper />, {
       history: ['/guides'],
     })

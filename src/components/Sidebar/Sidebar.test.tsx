@@ -3,7 +3,7 @@ import { render, fireEvent } from '@tests'
 import { Sidebar } from '@components'
 
 describe('Sidebar', () => {
-  test('can open with toggle', () => {
+  it('can open with toggle', () => {
     const { queryByTestId } = render(<Sidebar />)
 
     // expect(getComputedStyle(queryByTestId('sidebar-content')).display).toBe(
@@ -17,7 +17,7 @@ describe('Sidebar', () => {
     // )
   })
 
-  // test('can close with content', () => {
+  // it('can close with content', () => {
   //   const { queryByTestId } = render(<Sidebar />)
 
   //   const sidebarToggle: any = queryByTestId('sidebar-toggle')
@@ -30,7 +30,7 @@ describe('Sidebar', () => {
   //   )
   // })
 
-  // test('can close with closer', () => {
+  // it('can close with closer', () => {
   //   const { queryByTestId } = render(<Sidebar />)
 
   //   const sidebarToggle: any = queryByTestId('sidebar-toggle')

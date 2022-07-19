@@ -3,7 +3,7 @@ import { render } from '@tests'
 import { Link } from '@core'
 
 describe('Link', () => {
-  test('renders', () => {
+  it('renders', () => {
     render(<Link href="/" />)
   })
 })

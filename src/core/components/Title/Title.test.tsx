@@ -3,11 +3,11 @@ import { render } from '@tests'
 import { Title } from '@core'
 
 describe('Title', () => {
-  test('renders', () => {
+  it('renders', () => {
     render(<Title />)
   })
 
-  test('renders with title font in theme', () => {
+  it('renders with title font in theme', () => {
     render(<Title />, {
       theme: {
         fonts: {

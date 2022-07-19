@@ -3,7 +3,7 @@ import { render } from '@tests'
 import { ElementGroup } from '@core'
 
 describe('ElementGroup', () => {
-  test('renders', () => {
+  it('renders', () => {
     render(<ElementGroup />)
   })
 })

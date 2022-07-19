@@ -3,7 +3,7 @@ import { s } from '@core'
 import { render } from '@tests'
 
 describe('styled', () => {
-  test('with default styles', () => {
+  it('with default styles', () => {
     const StyledEl = s.button({
       color: 'red',
     })
@@ -13,7 +13,7 @@ describe('styled', () => {
     expect(style.color).toBe('red')
   })
 
-  test('with variant styles', () => {
+  it('with variant styles', () => {
     const StyledEl = s.div(
       {
         color: 'red',
@@ -26,7 +26,7 @@ describe('styled', () => {
     expect(style.color).toBe('blue')
   })
 
-  test('overriding styles inline', () => {
+  it('overriding styles inline', () => {
     const StyledEl = s.button({
       color: 'red',
     })
@@ -39,7 +39,7 @@ describe('styled', () => {
     expect(style.color).toBe('green')
   })
 
-  test('overriding default s from theme', () => {
+  it('overriding default s from theme', () => {
     const StyledEl = s.button(
       {
         color: 'red',
@@ -64,7 +64,7 @@ describe('styled', () => {
     expect(style.color).toBe('magenta')
   })
 
-  test('adding and applying variants from the theme', () => {
+  it('adding and applying variants from the theme', () => {
     const StyledEl = s.button(
       {
         color: 'red',

@@ -3,7 +3,7 @@ import { render, fireEvent } from '@tests'
 import { Popup } from '@core'
 
 describe('Popup', () => {
-  test('can close', () => {
+  it('able to be closed', () => {
     const onClose = jest.fn()
 
     const { queryByTestId } = render(<Popup onClose={onClose} />)

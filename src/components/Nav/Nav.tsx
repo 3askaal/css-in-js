@@ -45,13 +45,14 @@ export const Nav = ({ to, children, items }: any) => {
         ) : null}
       </ListItem>
       {isOpen && items
-        ? items.map(({ title, ref, isInView }: any) => (
+        ? items.map(({ title, ref, isInView }: any, index: number) => (
             <ListItem
               s={{ border: 0, marginLeft: 'xs' }}
               key={keyGen(title)}
               data-testid="nav-sub-item"
             >
               <Box
+                data-testid={`nav-sub-item-link-${index}`}
                 onClick={() => ref?.current?.scrollIntoView()}
                 s={{
                   cursor: 'pointer',

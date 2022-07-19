@@ -3,7 +3,7 @@ import { render } from '@tests'
 import { Code } from './Code'
 
 describe('Code', () => {
-  test('with children', () => {
+  it('renders with children', () => {
     const { getByText } = render(
       <Code>
         <p>Test</p>
@@ -12,12 +12,12 @@ describe('Code', () => {
     expect(getByText(/Test/i)).toBeInTheDocument()
   })
 
-  test('with content', () => {
+  it('renders with content', () => {
     const { getByText } = render(<Code content="<p>Test</p>" />)
     expect(getByText(/Test/i)).toBeInTheDocument()
   })
 
-  test('inline', () => {
+  it('renders inline', () => {
     const { getByText } = render(<Code inline content="<p>Test</p>" />)
     expect(getByText(/Test/i)).toBeInTheDocument()
   })

@@ -3,7 +3,7 @@ import { render, fireEvent } from '@tests'
 import { Select } from '@core'
 
 describe('Select', () => {
-  test('change', () => {
+  it('works on change', () => {
     const onChange = jest.fn()
 
     const { queryByTestId } = render(
@@ -24,7 +24,7 @@ describe('Select', () => {
     expect(onChange).toHaveBeenCalledWith("2")
   })
 
-  test('change multiple', () => {
+  it('works on change multiple', () => {
     const onChange = jest.fn()
 
     const { queryByTestId } = render(

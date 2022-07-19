@@ -8,7 +8,7 @@ const changedValue =
   'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis inventore qui alias, cumque ipsum nemo earum beatae itaque. Rerum, doloremque. Necessitatibus quos nostrum.'
 
 describe('TextArea', () => {
-  test('without value', () => {
+  it('works without value', () => {
     const onChange = jest.fn()
 
     const { queryByTestId } = render(<TextArea onChange={onChange} />)
@@ -21,7 +21,7 @@ describe('TextArea', () => {
     expect(onChange).toHaveBeenCalledWith(changedValue)
   })
 
-  test('with value', () => {
+  it('works with value', () => {
     const onChange = jest.fn()
 
     const { queryByTestId } = render(

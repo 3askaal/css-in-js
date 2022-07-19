@@ -3,7 +3,7 @@ import { render } from '@tests'
 import { Routes } from './Routes'
 
 describe('Sitewrapper', () => {
-  test('renders components view', () => {
+  it('renders home view', () => {
     const { queryByTestId } = render(<Routes />, {
       history: ['/'],
     })
@@ -11,7 +11,7 @@ describe('Sitewrapper', () => {
     expect(queryByTestId('home-view')).toBeTruthy()
   })
 
-  test('renders components view', () => {
+  it('renders components view', () => {
     const { queryByTestId } = render(<Routes />, {
       history: ['/components'],
     })
@@ -19,7 +19,7 @@ describe('Sitewrapper', () => {
     expect(queryByTestId('components-view')).toBeTruthy()
   })
 
-  test('renders guides view', () => {
+  it('renders guides view', () => {
     const { queryByTestId } = render(<Routes />, {
       history: ['/guides'],
     })

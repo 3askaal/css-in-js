@@ -3,7 +3,7 @@ import { render } from '@tests'
 import { MenuItem } from '@core'
 
 describe('MenuItem', () => {
-  test('renders', () => {
+  it('renders', () => {
     render(<MenuItem />)
   })
 })

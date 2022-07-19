@@ -3,11 +3,11 @@ import { render } from '@tests'
 import { List } from '@core'
 
 describe('List', () => {
-  test('renders', () => {
+  it('renders', () => {
     render(<List />)
   })
 
-  test('renders with title', () => {
+  it('renders with title', () => {
     render(<List title="test" />)
   })
 })

@@ -66,7 +66,6 @@
     "bump:patch": "npm version patch",
     "bump:major": "npm version major",
     "bump:minor": "npm version minor",
-    "commit": "git add . && git commit -m 'progress' && git push",
     "deploy": "npm run bump:patch && npm publish",
     "release": "npm run build:lib && npm run deploy"
   },

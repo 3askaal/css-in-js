@@ -4,7 +4,7 @@ import { Input, Checkbox } from '@core'
 import { PreviewComponent } from './PreviewComponent'
 
 describe('PreviewComponent', () => {
-  test('has code block', () => {
+  it('renders with code block', () => {
     const { queryByTestId } = render(
       <PreviewComponent>
         <Input />
@@ -14,7 +14,7 @@ describe('PreviewComponent', () => {
     expect(queryByTestId('preview-component-code')).toBeTruthy()
   })
 
-  test('has onchange block - input', () => {
+  it('renders with onchange block - input', () => {
     const { queryByTestId } = render(
       <PreviewComponent>
         <Input data-testid="test-input" />
@@ -28,7 +28,7 @@ describe('PreviewComponent', () => {
     expect(queryByTestId('preview-component-code-onchange')).toBeTruthy()
   })
 
-  test('has onchange block - checkbox', () => {
+  it('renders with onchange block - checkbox', () => {
     const { queryByTestId } = render(
       <PreviewComponent>
         <Checkbox data-testid="test-checkbox" />

@@ -3,7 +3,7 @@ import { render, fireEvent } from '@tests'
 import { CheckboxGroup } from '@core'
 
 describe('CheckboxGroup', () => {
-  test('change options', () => {
+  it('change options', () => {
     const onChange = jest.fn()
 
     const { queryAllByTestId } = render(

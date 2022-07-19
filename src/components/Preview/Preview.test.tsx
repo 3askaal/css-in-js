@@ -4,7 +4,7 @@ import { Card } from '@core'
 import { Preview } from './Preview'
 
 describe('Preview', () => {
-  test('Preview has title', () => {
+  it('renders with title', () => {
     const { getByTestId } = render(
       <Preview title="title">
         <Card>Card</Card>
@@ -14,7 +14,7 @@ describe('Preview', () => {
     expect(getByTestId('preview-title')).toBeTruthy()
   })
 
-  test('Preview has component', () => {
+  it('renders with component', () => {
     const { queryAllByTestId } = render(
       <Preview>
         <Card>Card</Card>
@@ -24,7 +24,7 @@ describe('Preview', () => {
     expect(queryAllByTestId('preview-component').length).toBe(1)
   })
 
-  test('Preview has multiple components', () => {
+  it('renders with multiple components', () => {
     const { queryAllByTestId } = render(
       <Preview>
         <Card>Card</Card>
