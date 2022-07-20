@@ -5,13 +5,13 @@ import { Preview } from './Preview'
 
 describe('Preview', () => {
   it('renders with title', () => {
-    const { getByTestId } = render(
+    const { queryByTestId } = render(
       <Preview title="title">
         <Card>Card</Card>
       </Preview>,
     )
 
-    expect(getByTestId('preview-title')).toBeTruthy()
+    expect(queryByTestId('preview-title')).toBeTruthy()
   })
 
   it('renders with component', () => {

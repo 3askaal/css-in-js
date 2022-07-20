@@ -35,7 +35,12 @@ module.exports = {
   ),
   jest: (config) => {
     config.transformIgnorePatterns = [
+      "/src/*.(ts|tsx)",
       'node_modules/?!(react-syntax-highlighter)/',
+    ]
+    config.collectCoverageFrom = [
+      "src/**/*.{ts,tsx}",
+      "!src/*.{ts,tsx}"
     ]
     config.moduleNameMapper = {
       ...config.moduleNameMapper,

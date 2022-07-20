@@ -12,17 +12,17 @@ const navItems = [
 
 describe('Nav', () => {
   it('renders', () => {
-    const { queryAllByTestId, getByTestId } = render(
+    const { queryAllByTestId, queryByTestId } = render(
       <Nav to="/page1" items={navItems}>
         Page 1
       </Nav>,
     )
 
-    const navOpenTrigger: any = getByTestId('nav-open-trigger')
+    const navOpenTrigger: any = queryByTestId('nav-open-trigger')
     fireEvent.click(navOpenTrigger)
     expect(queryAllByTestId('nav-sub-item').length).toBe(3)
 
-    const subItemLink = getByTestId('nav-sub-item-link-0')
+    const subItemLink = queryByTestId('nav-sub-item-link-0')
     fireEvent.click(subItemLink)
     expect(scrollIntoViewMock).toHaveBeenCalledTimes(1)
 
@@ -31,13 +31,13 @@ describe('Nav', () => {
   })
 
   it('opens and closes sub navs', () => {
-    const { queryAllByTestId, getByTestId } = render(
+    const { queryAllByTestId, queryByTestId } = render(
       <Nav to="/page1" items={navItems}>
         Page 1
       </Nav>,
     )
 
-    const navOpenTrigger: any = getByTestId('nav-open-trigger')
+    const navOpenTrigger: any = queryByTestId('nav-open-trigger')
     fireEvent.click(navOpenTrigger)
     expect(queryAllByTestId('nav-sub-item').length).toBe(3)
 
@@ -48,17 +48,17 @@ describe('Nav', () => {
   it('scrolls to section', () => {
     jest.spyOn(React, 'useState').mockReturnValueOnce([true, {}])
 
-    const { queryAllByTestId, getByTestId } = render(
+    const { queryAllByTestId, queryByTestId } = render(
       <Nav to="/page1" items={navItems}>
         Page 1
       </Nav>,
     )
 
-    const navOpenTrigger: any = getByTestId('nav-open-trigger')
+    const navOpenTrigger: any = queryByTestId('nav-open-trigger')
     fireEvent.click(navOpenTrigger)
     expect(queryAllByTestId('nav-sub-item').length).toBe(3)
 
-    const subItemLink = getByTestId('nav-sub-item-link-0')
+    const subItemLink = queryByTestId('nav-sub-item-link-0')
     expect(subItemLink).toBeInTheDocument()
     fireEvent.click(subItemLink)
     expect(scrollIntoViewMock).toHaveBeenCalledTimes(1)

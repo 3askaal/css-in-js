@@ -113,12 +113,17 @@
     "typescript": "^3.9.5"
   },
   "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/*.{ts,tsx}"
+    ],
     "moduleNameMapper": {
       "^@core(.*)$": "<rootDir>/src/core$1",
       "^@components(.*)$": "<rootDir>/src/components$1",
       "^@views(.*)$": "<rootDir>/src/views$1"
     },
     "transformIgnorePatterns": [
+      "/src/*.(ts|tsx)",
       "<rootDir>/node_modules/?!(react-syntax-highlighter)/"
     ]
   }
