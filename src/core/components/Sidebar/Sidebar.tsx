@@ -17,7 +17,7 @@ export const Sidebar: FC<any> = ({ children, ...props }: any): ReactElement => {
           onClick={() => setIsOpen(!isOpen)}
           data-testid="sidebar-toggle"
         >
-          {isOpen ? <X size="1.4rem" /> : <Menu size="1.4rem" />}
+          {isOpen ? <X size="2rem" /> : <Menu size="2rem" />}
         </SSidebarToggle>
         <SSidebarContent
           onClick={() => isOpen && setIsOpen(false)}

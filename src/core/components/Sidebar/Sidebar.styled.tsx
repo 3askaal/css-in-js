@@ -41,13 +41,8 @@ export const SSidebarToggle = s.button({
   justifyContent: 'center',
   left: '100%',
   top: 0,
-  width: '2.8rem',
-  height: '2.8rem',
   margin: 's',
   cursor: 'pointer',
-  borderRadius: 's',
-  backgroundColor: 'element.background',
-  color: 'element.color',
 })
 
 export const SSidebarCloser = s.div(({ theme }: any) => ({
