@@ -29,7 +29,7 @@ export const SSidebarContent = s.div({
 
 export const SSidebarToggle = s.button({
   ...ButtonReset,
-  display: ['flex', null, null, null, 'none'],
+  display: 'flex',
   position: 'absolute',
   alignItems: 'center',
   justifyContent: 'center',
