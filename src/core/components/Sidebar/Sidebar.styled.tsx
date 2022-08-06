@@ -1,5 +1,6 @@
 import { s } from '../../utils'
 import { rgba } from '../../style'
+import { ButtonReset } from '../Button/Button'
 
 export const SSidebar = s.div(({ isOpen }: any) => ({
   position: 'fixed',
@@ -33,6 +34,7 @@ export const SSidebarContent = s.div({
 })
 
 export const SSidebarToggle = s.button({
+  ...ButtonReset,
   display: ['flex', null, null, null, 'none'],
   position: 'absolute',
   alignItems: 'center',

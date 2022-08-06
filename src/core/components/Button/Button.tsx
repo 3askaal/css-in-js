@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from 'react'
 import { s } from '../../utils'
 
-const ButtonReset: any = {
+export const ButtonReset: any = {
   backgroundColor: 'transparent',
   border: 0,
   outline: 0,
