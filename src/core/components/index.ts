@@ -1,6 +1,5 @@
 export * from './Layout'
 export * from './Forms'
-
 export * from './Body/Body'
 export * from './Button/Button'
 export * from './Label/Label'
@@ -12,5 +11,6 @@ export * from './Menu/Menu'
 export * from './MenuItem/MenuItem'
 export * from './Popup/Popup'
 export * from './Progress/Progress'
+export * from './Sidebar/Sidebar'
 export * from './Title/Title'
 export * from './Text/Text'
