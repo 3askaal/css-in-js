@@ -41,7 +41,7 @@ export const SSidebarToggle = s.button({
   justifyContent: 'center',
   left: '100%',
   top: 0,
-  margin: 's',
+  margin: 'm',
   cursor: 'pointer',
   padding: 0,
 })
