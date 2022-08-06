@@ -38,6 +38,7 @@ export const SSidebarToggle = s.button({
   margin: 'm',
   cursor: 'pointer',
   padding: 0,
+  color: 'inherit',
 })
 
 export const SSidebarCloser = s.div(({ theme }: any) => ({
