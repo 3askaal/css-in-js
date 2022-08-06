@@ -1,4 +1,4 @@
-import { s } from '@core'
+import { s } from '../../utils'
 import { rgba } from '../../style'
 
 export const SSidebar = s.div(({ isOpen }: any) => ({
