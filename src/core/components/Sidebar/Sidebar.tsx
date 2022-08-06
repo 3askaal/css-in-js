@@ -35,3 +35,5 @@ export const Sidebar: FC<any> = ({ children, ...props }: any): ReactElement => {
     </>
   )
 }
+
+Sidebar.displayName = 'Sidebar'

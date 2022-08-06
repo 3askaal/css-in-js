@@ -18,7 +18,8 @@ export const SSidebar = s.div(({ isOpen }: any) => ({
     null,
     'translateX(0%)',
   ],
-  backgroundColor: 'grey10',
+  backgroundColor: 'element.background',
+  color: 'element.color',
   zIndex: 200,
   transition: 'all .25s ease',
 
@@ -43,7 +44,8 @@ export const SSidebarToggle = s.button({
   margin: 's',
   cursor: 'pointer',
   borderRadius: 's',
-  backgroundColor: 'grey10',
+  backgroundColor: 'element.background',
+  color: 'element.color',
 })
 
 export const SSidebarCloser = s.div(({ theme }: any) => ({

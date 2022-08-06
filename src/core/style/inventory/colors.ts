@@ -41,6 +41,7 @@ export const colors: Colors = {
     overlay: rgba('black', .25)
   },
   element: {
-    background: 'black'
+    background: 'black',
+    color: 'white'
   }
 }
