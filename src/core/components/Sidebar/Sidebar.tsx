@@ -7,7 +7,7 @@ import {
   SSidebarCloser,
 } from './Sidebar.styled'
 
-export const Sidebar: FC<any> = ({ children, ...props }: any): ReactElement => {
+export const Sidebar: FC<any> = ({ children, openButton, closeButton, ...props }: any): ReactElement => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -17,7 +17,7 @@ export const Sidebar: FC<any> = ({ children, ...props }: any): ReactElement => {
           onClick={() => setIsOpen(!isOpen)}
           data-testid="sidebar-toggle"
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? (closeButton || <X size={24} />) : (openButton || <Menu size={24} />)}
         </SSidebarToggle>
         <SSidebarContent
           onClick={() => isOpen && setIsOpen(false)}
