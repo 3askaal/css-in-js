@@ -18,7 +18,7 @@ export const Sidebar: FC<any> = ({
   const [isOpen, setIsOpen] = useState(false)
 
   const onClick = () => {
-    if (isOpen) {
+    if (!isOpen) {
       onOpen()
     } else {
       onClose()
