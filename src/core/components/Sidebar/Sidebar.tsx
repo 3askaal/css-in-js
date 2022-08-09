@@ -1,4 +1,4 @@
-import React, { FC, ReactElement, useState } from 'react'
+import React, { FC, ReactElement, useEffect, useState } from 'react'
 import { Menu, X } from 'react-feather'
 import {
   SSidebar,
@@ -7,20 +7,37 @@ import {
   SSidebarCloser,
 } from './Sidebar.styled'
 
-export const Sidebar: FC<any> = ({ children, openButton, closeButton, ...props }: any): ReactElement => {
+export const Sidebar: FC<any> = ({
+  children,
+  openButton,
+  closeButton,
+  onOpen,
+  onClose,
+  ...props
+}: any): ReactElement => {
   const [isOpen, setIsOpen] = useState(false)
+
+  const onClick = () => {
+    if (isOpen) {
+      onOpen()
+    } else {
+      onClose()
+    }
+
+    setIsOpen(!isOpen)
+  }
 
   return (
     <>
       <SSidebar {...props} isOpen={isOpen} data-testid="sidebar">
         <SSidebarToggle
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={onClick}
           data-testid="sidebar-toggle"
         >
           {isOpen ? (closeButton || <X size={24} />) : (openButton || <Menu size={24} />)}
         </SSidebarToggle>
         <SSidebarContent
-          onClick={() => isOpen && setIsOpen(false)}
+          onClick={onClick}
           data-testid="sidebar-content"
         >
           { children }
@@ -28,7 +45,7 @@ export const Sidebar: FC<any> = ({ children, openButton, closeButton, ...props }
       </SSidebar>
       {isOpen ? (
         <SSidebarCloser
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={onClick}
           data-testid="sidebar-closer"
         />
       ) : null}

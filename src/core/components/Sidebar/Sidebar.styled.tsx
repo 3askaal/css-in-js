@@ -27,8 +27,7 @@ export const SSidebarContent = s.div({
   overflowY: 'scroll',
 })
 
-export const SSidebarToggle = s.button({
-  ...ButtonReset,
+export const SSidebarToggle = s.div({
   display: 'flex',
   position: 'absolute',
   alignItems: 'center',
