@@ -30,6 +30,7 @@ export const SPopup = s.div({
   borderRadius: 'm',
   overflow: 'hidden',
   backgroundColor: 'element.background',
+  color: 'element.color',
   maxWidth: '640px',
 })
 
