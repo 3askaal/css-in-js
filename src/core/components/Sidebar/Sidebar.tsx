@@ -1,5 +1,6 @@
 import React, { FC, ReactElement, useEffect, useState } from 'react'
 import { Menu, X } from 'react-feather'
+import { useLocation } from 'react-router-dom';
 import {
   SSidebar,
   SSidebarContent,
@@ -15,6 +16,7 @@ export const Sidebar: FC<any> = ({
   onClose,
   ...props
 }: any): ReactElement => {
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false)
 
   const onClick = () => {
@@ -27,6 +29,10 @@ export const Sidebar: FC<any> = ({
     setIsOpen(!isOpen)
   }
 
+  useEffect(() => {
+    setIsOpen(false)
+  }, [location]);
+
   return (
     <>
       <SSidebar {...props} isOpen={isOpen} data-testid="sidebar">
@@ -37,7 +43,7 @@ export const Sidebar: FC<any> = ({
           {isOpen ? (closeButton || <X size={24} />) : (openButton || <Menu size={24} />)}
         </SSidebarToggle>
         <SSidebarContent
-          onClick={onClick}
+          // onClick={onClick}
           data-testid="sidebar-content"
         >
           { children }

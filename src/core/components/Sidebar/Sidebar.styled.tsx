@@ -1,6 +1,5 @@
 import { s } from '../../utils'
 import { rgba } from '../../style'
-import { ButtonReset } from '../Button/Button'
 
 export const SSidebar = s.div(({ isOpen }: any) => ({
   position: 'fixed',

@@ -5,6 +5,7 @@ import {
   Card,
   Checkbox,
   CheckboxGroup,
+  Switch,
   Link,
   Input,
   ListItem,
@@ -181,6 +182,12 @@ export const ComponentsView = () => {
                 { label: 'Option 4', value: 4 },
               ]}
             />
+          </Preview>
+        </Section>
+
+        <Section title="Switch">
+          <Preview>
+            <Switch />
           </Preview>
         </Section>
 
