@@ -33,10 +33,10 @@ export const SSwitchIndicator = s.div(({ value }: any) => ({
 export const Switch = ({ onChange, initialValue = false }: any) => {
   const [ value, setValue ] = useState(initialValue);
 
-  function onClick() {
+  const onClick = () => {
     const newValue = !value
-    setValue(newValue);
     onChange(newValue);
+    setValue(newValue);
   }
 
   return (
