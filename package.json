@@ -1,6 +1,6 @@
 {
   "name": "3oilerplate",
-  "version": "0.2.28",
+  "version": "0.2.29",
   "main": "./dist/index.js",
   "files": [
     "dist"
