@@ -24,6 +24,7 @@ export const SSidebar = s.div(({ isOpen }: any) => ({
 
 export const SSidebarContent = s.div({
   overflowY: 'scroll',
+  height: '100%',
 })
 
 export const SSidebarToggle = s.div({
