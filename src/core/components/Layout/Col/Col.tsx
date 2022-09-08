@@ -8,7 +8,7 @@ export const SCol = s.div(({ width }: any) => ({
   flexGrow: width ? 0 : 1,
 
   ...(width && {
-    flexBasis: `${width}%`,
+    flexBasis: width,
     flexShrink: 0,
   }),
 }))

@@ -1,4 +1,4 @@
-import styledComponents from 'styled-components'
+import styledComponents, { ThemedStyledFunction } from 'styled-components'
 import { css } from '@styled-system/css'
 import { forOwn, get, mapValues, wrap } from 'lodash'
 import deepmerge from 'deepmerge'
@@ -54,7 +54,11 @@ export const styledWrapper = (
   return styleFunctions
 }
 
-export const s = mapValues(
+interface Theme {
+
+}
+
+export const s: {[TTag in keyof JSX.IntrinsicElements]: ThemedStyledFunction<TTag, Theme>} = mapValues(
   styledComponents,
   (value) => {
     return wrap(value, (func: any, ...declProps) => {
