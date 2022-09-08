@@ -8,12 +8,14 @@ export const SCol = s.div(({ width }: any) => ({
   flexGrow: width ? 0 : 1,
 
   ...(width && {
+    flexBasis: width,
+    minWidth: width,
     flexShrink: 0,
   }),
 }))
 
-export const Col = ({ width, ...props }: any) => {
-  return <SCol sRef="Col" {...props} width={width} s={{ flexBasis: width, minWidth: width }} />
+export const Col = (props: any) => {
+  return <SCol sRef="Col" {...props} />
 }
 
 Col.displayName = 'Col'
