@@ -5,7 +5,7 @@ export const SCol = s.div(({ width }: any) => ({
   position: 'relative',
   display: 'flex',
   flexDirection: 'column',
-  flexGrow: width ? 0 : 1,
+  flexGrow: width !== undefined ? 0 : 1,
 
   ...(width && {
     flexBasis: width,
