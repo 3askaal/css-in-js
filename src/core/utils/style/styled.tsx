@@ -54,11 +54,7 @@ export const styledWrapper = (
   return styleFunctions
 }
 
-interface Theme {
-
-}
-
-export const s: {[TTag in keyof JSX.IntrinsicElements]: ThemedStyledFunction<TTag, Theme>} = mapValues(
+export const s = mapValues(
   styledComponents,
   (value) => {
     return wrap(value, (func: any, ...declProps) => {
