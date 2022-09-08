@@ -13,7 +13,7 @@ export const SCol = s.div(({ width }: any) => ({
 }))
 
 export const Col = ({ width, ...props }: any) => {
-  return <SCol sRef="Col" {...props} width={width} s={{ flexBasis: width }} />
+  return <SCol sRef="Col" {...props} width={width} s={{ flexBasis: width, minWidth: width }} />
 }
 
 Col.displayName = 'Col'
