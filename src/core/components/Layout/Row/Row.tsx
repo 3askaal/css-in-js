@@ -11,7 +11,6 @@ export const SRow = s.div(
     width: gutter && `calc(100% + ${theme.space[gutter]})`,
     marginLeft: gutter && `calc(-${theme.space[gutter]} / 2)`,
     marginRight: gutter && `calc(-${theme.space[gutter]} / 2)`,
-    height: '100%',
 
     [SCol]: {
       paddingLeft: gutter && `calc(${theme.space[gutter]} / 2)`,
