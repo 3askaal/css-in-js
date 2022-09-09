@@ -1,10 +1,21 @@
-import styledComponents, { ThemedStyledFunction } from 'styled-components'
-import { css } from '@styled-system/css'
+import { Children } from 'react'
+import styledComponents, { CSSObject, DefaultTheme } from 'styled-components'
+import { css, CssFunctionReturnType, SystemStyleObject } from '@styled-system/css'
 import { forOwn, get, mapValues, wrap } from 'lodash'
 import deepmerge from 'deepmerge'
-// import { resolveStylePropOnChildren } from './children'
 
-function resolveInputType(styles: any, props: any) {
+interface Props {
+  s?: SystemStyleObject;
+  sRef?: string;
+  theme?: DefaultTheme;
+  children?: Children;
+  [key: string]: any;
+}
+
+type Styles = SystemStyleObject;
+type Variants = { [variantKey: string]: Styles };
+
+function resolveInputType(styles: SystemStyleObject, props: any) {
   if (typeof styles === 'function') {
     return css(styles(props))
   }
@@ -13,15 +24,15 @@ function resolveInputType(styles: any, props: any) {
 }
 
 export const styledWrapper = (
-  props: any,
-  defaultStyles?: any,
-  variants?: any,
+  props: Props,
+  defaultStyles?: Styles,
+  variants?: Variants,
   sRef?: string,
-): any[] => {
+): CssFunctionReturnType[] => {
   const newProps = { ...props }
   const themeStyles = get(props?.theme?.components, sRef || newProps.sRef)
 
-  const styleFunctions: any[] = []
+  const styleFunctions: CssFunctionReturnType[] = []
 
   // TODO: Fix this feature
   // if (newProps.children) {
@@ -41,7 +52,7 @@ export const styledWrapper = (
 
   const mergedVariants = deepmerge(variants, themeStyles?.variants || {})
 
-  forOwn(mergedVariants, (variantStyle: any, variantKey: string) => {
+  forOwn(mergedVariants, (variantStyle: CSSObject, variantKey: string) => {
     if (newProps[variantKey]) {
       styleFunctions.push(resolveInputType(variantStyle, newProps))
     }
@@ -57,9 +68,9 @@ export const styledWrapper = (
 export const s = mapValues(
   styledComponents,
   (value) => {
-    return wrap(value, (func: any, ...declProps) => {
-      return func((props: any) => {
-        return styledWrapper(props, ...declProps)
+    return wrap(value, (func, ...declProps: [Styles, Variants, string]) => {
+      return func((props: Props) => {
+        return styledWrapper(props, ...declProps) as React.ComponentType
       })
     })
   },
