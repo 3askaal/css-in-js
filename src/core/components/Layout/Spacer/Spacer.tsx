@@ -2,18 +2,18 @@ import React from 'react'
 import { s } from '../../../utils'
 
 export const SSpacer = s.div(
-  ({ theme, size = 'm', s: { flexDirection = 'column' } = {} }: any) => ({
+  ({ size = 'm', s: { flexDirection = 'column' } = {} }: any) => ({
     display: 'flex',
     width: '100%',
     flexDirection,
 
     '> * + *': {
       ...(flexDirection === 'column' && {
-        marginTop: theme.space && theme.space[size],
+        marginTop: size,
       }),
 
       ...(flexDirection === 'row' && {
-        marginLeft: theme.space && theme.space[size],
+        marginLeft: size,
       }),
     },
   }),
