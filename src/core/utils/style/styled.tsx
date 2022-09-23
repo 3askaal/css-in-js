@@ -1,36 +1,33 @@
-import { Children } from 'react'
-import styledComponents, { CSSObject, DefaultTheme } from 'styled-components'
-import { css, CssFunctionReturnType, SystemStyleObject } from '@styled-system/css'
-import { forOwn, get, mapValues, wrap } from 'lodash'
+import styledComponents, { StyledComponent } from 'styled-components'
+import { css, CssFunctionReturnType, SystemStyleObject, Theme } from '@styled-system/css'
+import { forOwn, get, mapKeys, wrap } from 'lodash'
 import deepmerge from 'deepmerge'
 
-interface Props {
-  s?: SystemStyleObject;
-  sRef?: string;
-  theme?: DefaultTheme;
-  children?: Children;
+export type SStyles = SystemStyleObject
+export type SVariants = { [variantKey: string]: SystemStyleObject }
+export type SComponents = { [componentKey: string]: { default?: SystemStyleObject, variants?: SystemStyleObject } }
+
+export interface ExpectedProps {
+  sRef: string;
+  children: any;
+  theme: Theme & { components: SComponents };
+  s: SystemStyleObject;
   [key: string]: any;
 }
 
-type Styles = SystemStyleObject;
-type Variants = { [variantKey: string]: Styles };
+type DeclProps = (SStyles | SVariants | string)
 
-function resolveInputType(styles: SystemStyleObject, props: any) {
-  if (typeof styles === 'function') {
-    return css(styles(props))
-  }
-
-  return css(styles)
+function parseStyles(styles: SystemStyleObject, props: any) {
+  return (typeof styles === 'function') ? css(styles(props)) : css(styles);
 }
 
-export const styledWrapper = (
-  props: Props,
-  defaultStyles?: Styles,
-  variants?: Variants,
-  sRef?: string,
-): CssFunctionReturnType[] => {
-  const newProps = { ...props }
-  const themeStyles = get(props?.theme?.components, sRef || newProps.sRef)
+export const mergeStyles = (props: ExpectedProps, ...declProps: DeclProps[]): CssFunctionReturnType[] => {
+  const defaultStyles = declProps[0]
+  const variantStyles = declProps[1]
+  const sRef = declProps[2] || ''
+
+  const { s: inlineProps, ...newProps } = props
+  const themeComponentStyles = get(props?.theme?.components, sRef || newProps.sRef)
 
   const styleFunctions: CssFunctionReturnType[] = []
 
@@ -43,34 +40,40 @@ export const styledWrapper = (
   // }
 
   if (defaultStyles) {
-    styleFunctions.push(resolveInputType(defaultStyles, newProps))
+    styleFunctions.push(parseStyles(defaultStyles, newProps))
   }
 
-  if (themeStyles?.default) {
-    styleFunctions.push(resolveInputType(themeStyles.default, newProps))
+  if (themeComponentStyles?.default) {
+    styleFunctions.push(parseStyles(themeComponentStyles.default, newProps))
   }
 
-  const mergedVariants = deepmerge(variants, themeStyles?.variants || {})
+  if (variantStyles) {
+    const mergedVariants = deepmerge(variantStyles, themeComponentStyles?.variants || {})
 
-  forOwn(mergedVariants, (variantStyle: CSSObject, variantKey: string) => {
-    if (newProps[variantKey]) {
-      styleFunctions.push(resolveInputType(variantStyle, newProps))
-    }
-  })
+    forOwn(mergedVariants, (variantStyle: SystemStyleObject, variantKey: string) => {
+      if (newProps[variantKey]) {
+        styleFunctions.push(parseStyles(variantStyle, newProps))
+      }
+    })
+  }
 
-  if (newProps.s) {
-    styleFunctions.push(resolveInputType({ '&&&': newProps.s }, newProps))
+
+  if (inlineProps) {
+    styleFunctions.push(parseStyles({ '&&&': newProps.s }, newProps))
   }
 
   return styleFunctions
 }
 
-export const s = mapValues(
+interface WrappedCallback { (props: ExpectedProps): any; }
+type Wrapped = (cb: WrappedCallback) => StyledComponent<'div', Theme>;
+
+export const s = mapKeys(
   styledComponents,
   (value) => {
-    return wrap(value, (func, ...declProps: [Styles, Variants, string]) => {
-      return func((props: Props) => {
-        return styledWrapper(props, ...declProps) as React.ComponentType
+    return wrap<Wrapped, DeclProps, any>(value, (func, ...declProps) => {
+      return func((props) => {
+        return mergeStyles(props, ...declProps)
       })
     })
   },
