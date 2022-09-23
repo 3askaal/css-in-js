@@ -1,4 +1,4 @@
-import styledComponents, { StyledComponent } from 'styled-components'
+import styledComponents, { IntrinsicElementsKeys, StyledComponent } from 'styled-components'
 import { css, CssFunctionReturnType, SystemStyleObject, Theme } from '@styled-system/css'
 import { forOwn, get, mapValues, wrap } from 'lodash'
 import deepmerge from 'deepmerge'
@@ -6,11 +6,11 @@ import deepmerge from 'deepmerge'
 export type SStyles = SystemStyleObject
 export type SVariants = { [variantKey: string]: SStyles }
 export type SComponents = { [componentKey: string]: { default?: SStyles, variants?: SVariants } }
-
+export type STheme = Theme & { components: SComponents }
 export interface SProps {
   sRef: string;
-  children: any;
-  theme: Theme & { components: SComponents };
+  children: React.ReactNode;
+  theme: STheme;
   s: SystemStyleObject;
   [key: string]: any;
 }
@@ -22,6 +22,7 @@ const parseStyles = (styles: SystemStyleObject, props: SProps) => {
   return (typeof styles === 'function') ? css(styles(props)) : css(styles);
 }
 
+// Resolves all styles with Styled System's CSS helper
 export const mergeStyles = (props: SProps, ...declParams: SDeclParams[]): CssFunctionReturnType[] => {
   const styleFunctions: CssFunctionReturnType[] = []
 
@@ -77,7 +78,7 @@ export const mergeStyles = (props: SProps, ...declParams: SDeclParams[]): CssFun
 interface SWrapperCallback { (props: SProps): any; }
 
 type SWrapper = (cb: SWrapperCallback) => SReturnType;
-type SReturnType = StyledComponent<any, Theme>;
+type SReturnType = StyledComponent<IntrinsicElementsKeys | React.ComponentType<any>, Theme>;
 
 export const s = mapValues(
   styledComponents,
