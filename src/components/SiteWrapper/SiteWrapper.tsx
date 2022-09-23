@@ -2,6 +2,7 @@ import React from 'react'
 import { s } from '@core'
 import { useLocation } from 'react-router-dom'
 import { Wrapper } from '../../core'
+import { Sidebar } from '../Sidebar/Sidebar'
 
 const SSiteWrapper = s.div({
   display: 'flex',
@@ -14,7 +15,7 @@ export const SiteWrapper = ({ children }: any) => {
 
   return (
     <SSiteWrapper>
-      {/* {atHome ? null : <Sidebar />} */}
+      {atHome ? null : <Sidebar />}
       {atHome ? (
         children
       ) : (

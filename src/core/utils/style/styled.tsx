@@ -17,7 +17,7 @@ export interface ExpectedProps {
 
 type DeclProps = (SStyles | SVariants | string)
 
-// Resolves   CSS object or CSS style function
+// Resolves either style functions or style objects
 function parseStyles(styles: SystemStyleObject, props: ExpectedProps) {
   return (typeof styles === 'function') ? css(styles(props)) : css(styles);
 }
@@ -47,9 +47,9 @@ export const mergeStyles = (props: ExpectedProps, ...declParams: DeclProps[]): C
   }
 
   // Apply variants styling
-  if (variantStyles) {
+  if (variantStyles || themeComponentStyles?.variants) {
     // Merge variants defined in component and in theme
-    const mergedVariants = deepmerge(variantStyles, themeComponentStyles?.variants || {})
+    const mergedVariants = deepmerge(variantStyles || {}, themeComponentStyles?.variants || {})
 
     forOwn(mergedVariants, (variantStyle: SystemStyleObject, variantKey: string) => {
       if (props[variantKey]) {
