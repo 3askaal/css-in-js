@@ -9,7 +9,7 @@ export const SSelectWrapper = s.div({
   cursor: 'pointer',
 })
 
-export const SSelect = s.select(({ theme }: any) => ({
+export const SSelect = s.select(({ theme }) => ({
   ...FormElementReset,
   cursor: 'pointer',
   paddingRight: `calc(${theme.space.s} + 24px)`,

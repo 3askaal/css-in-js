@@ -6,7 +6,7 @@ import { FormResetStyle, GlobalStyle } from '@core'
 import { MdxComponents } from '../config/mdx.config'
 import { SApp } from './App.styled'
 
-export const AppWrapper: any = ({ children, theme }: any) => (
+export const AppWrapper = ({ children, theme }: any) => (
   <ThemeProvider theme={theme}>
     <SApp>
       <GlobalStyle />

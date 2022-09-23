@@ -1,5 +1,5 @@
-import { s } from '@core'
 import { css, keyframes } from 'styled-components'
+import { s } from '../../core'
 
 const fadeIn: any = keyframes({
   from: {
@@ -25,7 +25,7 @@ const beforeAndAfter = {
 }
 
 export const SLogo = s.div(
-  ({ theme }: any) => ({
+  ({ theme }) => ({
     position: 'relative',
     display: 'inline-flex',
     justifyContent: 'center',
@@ -49,7 +49,7 @@ export const SLogo = s.div(
       '-webkit-text-stroke-color': theme.colors.white,
     },
   }),
-  ({ theme }: any) => css`
+  ({ theme }) => css`
     animation: ${fadeIn} ${theme.durations.xxl} ease-in-out
       ${theme.durations.xxl} forwards;
   `,

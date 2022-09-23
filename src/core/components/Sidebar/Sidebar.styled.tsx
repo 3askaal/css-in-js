@@ -40,7 +40,7 @@ export const SSidebarToggle = s.div({
   color: 'inherit',
 })
 
-export const SSidebarCloser = s.div(({ theme }: any) => ({
+export const SSidebarCloser = s.div(({ theme }) => ({
   backgroundColor: rgba(theme.colors.black, 0.25),
   position: 'fixed',
   top: 0,

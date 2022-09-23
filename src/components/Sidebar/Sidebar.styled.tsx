@@ -1,5 +1,4 @@
-import { s } from '@core'
-import { rgba } from '../../core'
+import { rgba, s } from '../../core'
 
 export const SSidebar = s.div(({ isOpen }: any) => ({
   position: 'fixed',
@@ -46,7 +45,7 @@ export const SSidebarToggle = s.button({
   backgroundColor: 'grey10',
 })
 
-export const SSidebarCloser = s.div(({ theme }: any) => ({
+export const SSidebarCloser = s.div(({ theme }) => ({
   backgroundColor: rgba(theme.colors.black, 0.25),
   position: 'fixed',
   top: 0,
