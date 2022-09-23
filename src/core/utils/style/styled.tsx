@@ -7,7 +7,7 @@ export type SStyles = SystemStyleObject
 export type SVariants = { [variantKey: string]: SStyles }
 export type SComponents = { [componentKey: string]: { default?: SStyles, variants?: SVariants } }
 
-export interface ExpectedProps {
+export interface SProps {
   sRef: string;
   children: any;
   theme: Theme & { components: SComponents };
@@ -15,14 +15,14 @@ export interface ExpectedProps {
   [key: string]: any;
 }
 
-type DeclProps = (SStyles | SVariants | string)
+type SDeclParams = (SStyles | SVariants | string)
 
 // Resolves either style functions or style objects
-function parseStyles(styles: SystemStyleObject, props: ExpectedProps) {
+const parseStyles = (styles: SystemStyleObject, props: SProps) => {
   return (typeof styles === 'function') ? css(styles(props)) : css(styles);
 }
 
-export const mergeStyles = (props: ExpectedProps, ...declParams: DeclProps[]): CssFunctionReturnType[] => {
+export const mergeStyles = (props: SProps, ...declParams: SDeclParams[]): CssFunctionReturnType[] => {
   const styleFunctions: CssFunctionReturnType[] = []
 
   // TODO: Define types in order in declParams rest param
@@ -74,13 +74,15 @@ export const mergeStyles = (props: ExpectedProps, ...declParams: DeclProps[]): C
   return styleFunctions
 }
 
-interface WrappedCallback { (props: ExpectedProps): any; }
-type Wrapped = (cb: WrappedCallback) => StyledComponent<'div', Theme>;
+interface SWrapperCallback { (props: SProps): any; }
+
+type SWrapper = (cb: SWrapperCallback) => SReturnType;
+type SReturnType = StyledComponent<any, Theme>;
 
 export const s = mapValues(
   styledComponents,
   (value) => {
-    return wrap<Wrapped, DeclProps, StyledComponent<any, Theme>>(value, (func, ...declParams) => {
+    return wrap<SWrapper, SDeclParams, SReturnType>(value, (func, ...declParams) => {
       return func((props) => {
         return mergeStyles(props, ...declParams)
       })
