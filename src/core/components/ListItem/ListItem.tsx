@@ -11,19 +11,19 @@ export const SListItem = s.div(
       borderColor: 'primary',
     },
   },
-  {
-    disabled: {
-      opacity: 0.8,
-      cursor: 'not-allowed',
-      pointerEvents: 'not-allowed',
+  // {
+  //   disabled: {
+  //     opacity: 0.8,
+  //     cursor: 'not-allowed',
+  //     pointerEvents: 'not-allowed',
 
-      '@media (hover: hover)': {
-        ':hover': {
-          backgroundColor: 'primaryDark',
-        },
-      },
-    },
-  },
+  //     '@media (hover: hover)': {
+  //       ':hover': {
+  //         backgroundColor: 'primaryDark',
+  //       },
+  //     },
+  //   },
+  // },
 )
 
 export const ListItem: FC<any> = ({
