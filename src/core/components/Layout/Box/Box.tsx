@@ -36,7 +36,7 @@ interface BoxProps {
 export const SBox: any = s.div()
 
 // eslint-disable-next-line
-const getStyling = ({
+const getAttrStyling = ({
   db,
   dib,
   w,
@@ -100,14 +100,8 @@ const getStyling = ({
   }
 }
 
-// { s: styling, ...props }
-export const Box = ({ ...props }: any) => {
-  // const mergedStyling = {
-  //   ...styling,
-  //   ...getStyling(props),
-  // }
-
-  return <SBox sRef="Box" {...props} />
+export const Box = ({ s: sProp, ...props }: any) => {
+  return <SBox sRef="Box" {...props} s={{ ...sProp, ...getAttrStyling(props) }} />
 }
 
 Box.displayName = 'Box'
