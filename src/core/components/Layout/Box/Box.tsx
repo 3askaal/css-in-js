@@ -2,35 +2,7 @@ import React from 'react'
 import { s } from '../../../utils'
 
 interface BoxProps {
-  db: any;
-  dib: any;
-  w: any;
-  h: any;
-  mw: any;
-  mh: any;
-  ovh: any;
-  df: any;
-  dif: any;
-  fdr: any;
-  fdc: any;
-  ai: any;
-  aic: any;
-  aifs: any;
-  aife: any;
-  jcsb: any;
-  jcsa: any;
-  jcfs: any;
-  jcfe: any;
-  asc: any;
-  asfs: any;
-  asfe: any;
-  jsc: any;
-  jsfs: any;
-  jsfe: any;
-  fg: any;
-  fs: any;
-  fb: any;
-  o: any;
+  [key: string]: any;
 }
 
 export const SBox: any = s.div()
@@ -41,6 +13,8 @@ const getAttrStyling = ({
   dib,
   w,
   h,
+  w100p,
+  h100p,
   mw,
   mh,
   ovh,
@@ -52,6 +26,7 @@ const getAttrStyling = ({
   aic,
   aifs,
   aife,
+  jcc,
   jcsb,
   jcsa,
   jcfs,
@@ -72,6 +47,8 @@ const getAttrStyling = ({
     ...(dib && { display: 'inline-block'}),
     ...(w && { width: w }),
     ...(h && { height: h }),
+    ...(w100p && { width: '100%'}),
+    ...(h100p && { height: '100%'}),
     ...(mw && { maxWidth: mw }),
     ...(mh && { maxHeight: mh }),
     ...(ovh && { overflow: 'hidden' }),
@@ -83,6 +60,7 @@ const getAttrStyling = ({
     ...(aic && { alignItems: 'center'}),
     ...(aifs && { alignItems: 'flex-start' }),
     ...(aife && { alignItems: 'flex-end' }),
+    ...(jcc && { justifyContent: 'center'}),
     ...(jcsb && { justifyContent: 'space-between'}),
     ...(jcsa && { justifyContent: 'space-around'}),
     ...(jcfs && { justifyContent: 'flex-start' }),
