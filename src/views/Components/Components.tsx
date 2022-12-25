@@ -5,6 +5,7 @@ import {
   Card,
   Checkbox,
   CheckboxGroup,
+  RadioGroup,
   Switch,
   Link,
   Input,
@@ -180,6 +181,17 @@ export const ComponentsView = () => {
                 { label: 'Option 2', value: 2 },
                 { label: 'Option 3', value: 3, isChecked: true },
                 { label: 'Option 4', value: 4 },
+              ]}
+            />
+          </Preview>
+        </Section>
+
+        <Section title="RadioGroup">
+          <Preview>
+            <RadioGroup
+              options={[
+                { label: 'Option 1', value: 1 },
+                { label: 'Option 2', value: 2 },
               ]}
             />
           </Preview>

@@ -1,39 +1,41 @@
 import { filter, map } from 'lodash'
 import React, { FC, ReactElement, useState } from 'react'
-import { SCheckboxGroup } from './CheckboxGroup.styled'
-import { Checkbox, CheckboxProps } from '../Checkbox/Checkbox'
+import { SRadioGroup } from './RadioGroup.styled'
 import { keyGen } from '../../../utils'
+import { Radio, RadioProps } from '../Radio/Radio'
 
-export interface CheckboxGroupProps {
-  options: CheckboxProps[]
+export interface RadioGroupProps {
+  options: RadioProps[]
   onChange?: any
 }
 
-export const CheckboxGroup: FC<CheckboxGroupProps> = ({
+export const RadioGroup: FC<RadioGroupProps> = ({
   options,
   onChange,
-}: CheckboxGroupProps): ReactElement => {
+}: RadioGroupProps): ReactElement => {
   const [items, setItems] = useState(options)
 
   function onChangeHandler(value: boolean, index: number) {
-    const newItems = [...items]
+    const newItems = items.map((item) => ({ ...item, isChecked: false }))
     newItems[index].isChecked = value
     setItems(newItems)
     if (onChange) onChange(map(filter(newItems, 'isChecked'), 'value'))
   }
 
   return (
-    <SCheckboxGroup sRef="CheckboxGroup" data-testid="checkbox-group">
+    <SRadioGroup sRef="RadioGroup" data-testid="checkbox-group">
       {items.map((checkboxProps: any, index: number) => (
-        <Checkbox
+        <Radio
+          type="radio"
           {...checkboxProps}
+          name="radio1"
           onChange={(value: boolean) => onChangeHandler(value, index)}
           key={keyGen()}
         />
       )) || null}
-    </SCheckboxGroup>
+    </SRadioGroup>
   )
 }
 
 
-CheckboxGroup.displayName = 'CheckboxGroup'
+RadioGroup.displayName = 'RadioGroup'
