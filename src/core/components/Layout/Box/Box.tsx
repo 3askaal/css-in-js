@@ -9,6 +9,10 @@ export const SBox: any = s.div()
 
 // eslint-disable-next-line
 const getAttrStyling = ({
+  poss,
+  posr,
+  posa,
+  posf,
   db,
   dib,
   w,
@@ -46,6 +50,10 @@ const getAttrStyling = ({
   o,
 }: BoxProps) => {
   return {
+    ...(poss && { position: 'static'}),
+    ...(posr && { position: 'relative'}),
+    ...(posa && { position: 'absolute'}),
+    ...(posf && { position: 'fixed'}),
     ...(db && { display: 'block'}),
     ...(dib && { display: 'inline-block'}),
     ...(w && { width: w }),
