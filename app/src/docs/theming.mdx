@@ -1,0 +1,53 @@
+## Theming
+
+Define a theme for your app which you pass to the ThemeProvider.
+
+```ts
+import { lighten, darken } from '3oilerplate'
+
+export const theme = {
+  breakpoints: ['320px', '480px', '768px', '1024px', '1200px'],
+  rootFontSizes: ['12px', '14px', '16px'],
+  fontSizes: {
+    s: '0.9em',
+    m: '1em',
+    l: '1.1em'
+  },
+  fonts: {
+    base: "'Roboto', Helvetica, Arial, sans-serif",
+    title: "'Roboto', Helvetica, Arial, sans-serif",
+    code: 'Monaco, monospace, Arial, sans-serif'
+  },
+  colors: {
+    white: darken('white', 10),
+    black: lighten('black', 10),
+    primary: '#40a578',
+    primaryLight: lighten('#40a578', 10),
+    primaryDark: darken('#40a578', 10),
+    secondary: '#7bbb6a',
+    secondaryLight: lighten('#7bbb6a', 10),
+    secondaryDark: darken('#7bbb6a', 10),
+  },
+  space: {
+    xs: '0.5rem',
+    s: '0.75rem',
+    m: '1rem',
+    l: '1.25rem',
+    xl: '1.5rem',
+  },
+  durations: {
+    s: '0.25s',
+    m: '0.50s',
+    l: '0.75s'
+  },
+  borders: {
+    main: '1px solid',
+    thick: '2px solid'
+  },
+  radii: {
+    s: '0.125rem',
+    m: '0.25rem',
+    l: '0.5rem',
+  }
+}
+```

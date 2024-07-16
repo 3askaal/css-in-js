@@ -1,0 +1,28 @@
+## Overriding Styles
+
+Components are exposed with a prop for overriding styling inline in the same way as you declare the component.
+
+`<Container s={{ maxWidth: ['800px', '1000px', '1200px'], pt: '200px' }} />`
+
+You can also override the styling of specific components in the theme configuration. This enables you to share components between multiple projects and have small adjustments per project.
+
+```ts
+const theme = {
+  ...,
+  components: {
+    Container: {
+      defaults: {
+        maxWidth: ['800px', '1000px', '1200px'],
+        pt: '100px'
+      },
+    },
+    Button: {
+      defaults: {
+        fontSize: '1.5rem',
+        py: 's',
+        px: 'm'
+      },
+    },
+  },
+}
+```
