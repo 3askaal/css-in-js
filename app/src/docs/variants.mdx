@@ -1,0 +1,55 @@
+## Variants
+
+Variants can be defined in the component declaration with the second parameter.
+
+```ts
+import { s } from '3oilerplate'
+
+const Button = s.button(
+  ...,
+  {
+    secondary: {
+      bg: 'secondary',
+
+      '&:hover': {
+        bg: 'secondaryDark'
+      }
+    },
+    outline: {
+      bg: 'transparent',
+      color: 'primary',
+      border: 'main',
+      borderColor: 'primary',
+
+      '&:hover': {
+        bg: 'primary'
+      }
+    }
+  }
+)
+```
+
+You can also define variants in your theme object.
+
+```ts
+const theme = {
+  ...,
+  components: {
+    Button: {
+      variants: {
+        secondary: {
+          bg: 'secondary',
+
+          '&:hover': {
+            bg: 'secondaryDark',
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+To apply a variant to a component just pass a prop matching the name of the variant.
+
+`<Button secondary />`

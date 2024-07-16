@@ -1,0 +1,17 @@
+## Getting Started
+
+Wrap your application in a ThemeProvider.
+
+```tsx
+import { ThemeProvider } from 'styled-components'
+import { Text } from '3oilerplate'
+import theme from './style/theme'
+
+const App = () => {
+  return (
+    <ThemeProvider theme={theme}>
+      <Text>Hello world</Text>
+    </ThemeProvider>
+  )
+}
+```

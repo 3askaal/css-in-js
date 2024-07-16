@@ -1,0 +1,25 @@
+## Create Components
+
+Creating components works the same way as Styled Components, but with a few benefits:
+- A wide range of CSS shorthand properties are available.
+- Theme values are available by passing keys as strings.
+- Responsive styles are available by passing arrays of values, these values are mapped to the breakpoints defined in the theme.
+
+```ts
+import { s } from '3oilerplate'
+
+const Button = s.button({
+  bg: 'primary',
+  color: 'white',
+  border: '1px solid',
+  borderColor: 'grey[10]',
+  p: ['xs', 's', 'm'],
+  mb: ['12px', '24px', '36px'],
+
+  '&:hover': {
+    bg: 'primaryDark',
+  },
+})
+```
+
+Note: This wrapper currently does not support style strings, only style objects.
