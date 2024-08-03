@@ -1,14 +1,14 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { Container, Spacer, Title, Text, Button } from '../../../../src'
+import { Logo, Bricks } from '../../components'
 import { SHome } from './Home.styled'
-import { Logo, Background } from '../../components'
 
 export const HomeView = () => {
   return (
     <SHome>
-      <Background />
-      <Container s={{ paddingX: 'm', maxWidth: 'auto', justifyContent: 'center' }}>
+      <Bricks />
+      <Container s={{ justifyContent: 'center', maxWidth: 'auto', paddingX: 'm' }}>
         <Spacer size="l">
           <Spacer size="m" s={{ alignItems: 'center' }}>
             <Logo />
