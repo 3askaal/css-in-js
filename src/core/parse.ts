@@ -1,4 +1,5 @@
 import { get, isArray, isFunction, isObject, merge } from 'lodash'
+import { getMutatedValue } from './mutations'
 import { SHORTHANDS, VALUES } from './constants'
 import type { TStyle, TStyleObject, TStyleProps, TStyleVariants, TTheme } from '.'
 import type * as CSS from 'csstype'
@@ -27,15 +28,17 @@ export const parse = (style: TStyle, props: TStyleProps): CSS.Properties => {
         if (value === null || value === undefined) return acc
         // get value from theme
         const themeValue: string | null = themeKey && get(props.theme[themeKey], value)
+        // mutate value when format matches
+        const mutatedValue = /^\[([^]*?)\]$/.test(value) ? getMutatedValue(value, themeKey, props) : null
         // define media query when index !== 0
         const mediaQuery = (!!index && !!props.theme.breakpoints.length && `@media (min-width: ${props.theme.breakpoints[index - 1]})`) || ''
 
         return {
           ...acc,
           // define style at root
-          ...(!mediaQuery && { [property]: themeValue ?? value }),
+          ...(!mediaQuery && { [property]: themeValue ?? mutatedValue ?? value }),
           // define style in media query
-          ...(mediaQuery && { [mediaQuery]: { [property]: themeValue ?? value } })
+          ...(mediaQuery && { [mediaQuery]: { [property]: themeValue ?? mutatedValue ?? value } })
         }
       }, {}))
     }, {}))

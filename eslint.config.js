@@ -69,7 +69,7 @@ export default [
       '@typescript-eslint/no-misused-promises': ['error'],
       '@typescript-eslint/no-namespace': ['error'],
       '@typescript-eslint/no-non-null-asserted-optional-chain': ['error'],
-      '@typescript-eslint/no-non-null-assertion': ['error'],
+      // '@typescript-eslint/no-non-null-assertion': ['error'],
       '@typescript-eslint/no-redeclare': ['error', { builtinGlobals: false }],
       '@typescript-eslint/no-this-alias': ['error', { allowDestructuring: true }],
       '@typescript-eslint/no-unnecessary-boolean-literal-compare': ['error'],

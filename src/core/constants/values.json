@@ -1,5 +1,6 @@
 {
   "color": "colors",
+  "background": "colors",
   "backgroundColor": "colors",
   "borderColor": "colors",
   "margin": "space",
