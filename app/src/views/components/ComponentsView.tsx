@@ -1,5 +1,5 @@
 import { Search as SearchIcon } from 'react-feather'
-import { Button, Checkbox, CheckboxGroup, RadioGroup, Switch, Input, Container, Spacer, Label, Title, Select, Row, Col, Box, TextArea, Progress, ElementGroup } from '../../../../src'
+import { Button, Checkbox, CheckboxGroup, RadioGroup, Switch, Input, Container, Spacer, Label, Title, Select, Row, Col, Box, TextArea, Progress, Spinner, ElementGroup } from '../../../../src'
 import { Preview, Section } from '../../components'
 
 export const ComponentsView = () => {
@@ -187,17 +187,23 @@ export const ComponentsView = () => {
           </Preview>
         </Section>
 
+        <Section title="Spinner">
+          <Preview>
+            <Spinner />
+          </Preview>
+        </Section>
+
         <Section title="ElementGroup">
           <Preview>
             <ElementGroup>
-              <Button s={{ py: 'xxxs' }} block>Tab 1</Button>
-              <Button s={{ py: 'xxxs' }} block outline>Tab 2</Button>
-              <Button s={{ py: 'xxxs' }} block outline>Tab 3</Button>
+              <Button s={{ py: 'xxs' }} block>Tab 1</Button>
+              <Button s={{ py: 'xxs' }} block outline>Tab 2</Button>
+              <Button s={{ py: 'xxs' }} block outline>Tab 3</Button>
             </ElementGroup>
             <ElementGroup>
               <Input placeholder="Search..." />
               <Button s={{ py: 0, px: 's' }}>
-                <SearchIcon />
+                <SearchIcon size="1.2rem" />
               </Button>
             </ElementGroup>
           </Preview>

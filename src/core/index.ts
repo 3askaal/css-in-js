@@ -1,5 +1,6 @@
 export * from './wrap'
 export * from './merge'
 export * from './parse'
+export * from './keyframes'
 export * from './provider'
 export * from './types/index.d'
