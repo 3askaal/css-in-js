@@ -4,6 +4,7 @@ import sortKeysCustomOrder from 'eslint-plugin-sort-keys-custom-order'
 import * as importPlugin from 'eslint-plugin-import'
 import promisePlugin from 'eslint-plugin-promise'
 import nodePlugin from 'eslint-plugin-n'
+import globals from 'globals'
 
 // CSS properties custom order
 const props = JSON.parse(readFileSync(new URL('./src/core/constants/props.json', import.meta.url)))
@@ -11,12 +12,16 @@ const props = JSON.parse(readFileSync(new URL('./src/core/constants/props.json',
 export default [
   {
     files: ['{src,app}/**/*.{ts,tsx}'],
+    ignores: ['dist'],
     languageOptions: {
       parser,
       parserOptions: {
         ecmaFeatures: { jsx: true },
         ecmaVersion: 2024,
         project: './tsconfig.json'
+      },
+      globals: {
+        ...globals.browser
       }
     },
     plugins: {
@@ -91,7 +96,7 @@ export default [
       '@typescript-eslint/prefer-optional-chain': ['error'],
       '@typescript-eslint/prefer-promise-reject-errors': ['error'],
       '@typescript-eslint/prefer-readonly': ['error'],
-      '@typescript-eslint/prefer-reduce-type-parameter': ['error'],
+      // '@typescript-eslint/prefer-reduce-type-parameter': ['error'],
       '@typescript-eslint/prefer-return-this-type': ['error'],
       '@typescript-eslint/promise-function-async': ['error'],
       '@typescript-eslint/require-array-sort-compare': ['error', { ignoreStringArrays: true }],
