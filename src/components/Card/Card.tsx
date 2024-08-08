@@ -1,4 +1,4 @@
-import { s } from '../../core'
+import { s } from '../..'
 
 export const SCard = s.div({
   width: '100%',

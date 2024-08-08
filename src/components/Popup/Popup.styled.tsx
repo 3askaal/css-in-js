@@ -1,5 +1,4 @@
-import { s } from '../../core'
-import { rgba } from '../../style'
+import { s, rgba } from '../../'
 
 export const SPopupWrapper = s.div({
   position: 'fixed',

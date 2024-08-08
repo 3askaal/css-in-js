@@ -1,4 +1,4 @@
-import { s } from '../../core'
+import { s } from '../..'
 
 const SText = s.p(({ as }) => ({
   lineHeight: 1.5,

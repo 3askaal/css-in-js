@@ -1,8 +1,7 @@
-import { s } from '../../../core'
-import { SRadio } from '../Radio/Radio.styled'
+import { s } from '../../..'
 
 export const SRadioGroup = s.div({
-  [SRadio]: {
+  '> *': {
     marginBottom: 'xs',
 
     ':last-child': {

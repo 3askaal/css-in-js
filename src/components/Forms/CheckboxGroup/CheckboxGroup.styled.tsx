@@ -1,8 +1,8 @@
-import { s } from '../../../core'
+import { s } from '../../..'
 import { SCheckbox } from '../Checkbox/Checkbox.styled'
 
 export const SCheckboxGroup = s.div({
-  [SCheckbox]: {
+  '> *': {
     marginBottom: 'xs',
 
     ':last-child': {

@@ -1,4 +1,4 @@
-import { s } from '../../../core'
+import { s } from '../../..'
 
 export const SSpacer = s.div(({ size = 'm', s: { flexDirection = 'column' } = {} }) => ({
   display: 'flex',

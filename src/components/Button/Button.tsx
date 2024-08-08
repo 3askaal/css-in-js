@@ -1,4 +1,4 @@
-import { s } from '../../core'
+import { s } from '../../'
 
 export const SButton = s.button(
   {
@@ -7,11 +7,11 @@ export const SButton = s.button(
     justifyContent: 'center',
     paddingY: 'xs',
     paddingX: 'm',
-    borderRadius: 'm',
     backgroundColor: 'primary',
+    borderRadius: 'm',
     color: 'white',
-    cursor: 'pointer',
     transition: 'all .3s ease',
+    cursor: 'pointer',
 
     '&:hover': {
       backgroundColor: 'primaryDark'
@@ -23,24 +23,24 @@ export const SButton = s.button(
   },
   {
     outline: {
+      backgroundColor: 'transparent',
       border: 'main',
       borderColor: 'primary',
-      backgroundColor: 'transparent',
       color: 'primary',
 
       '&:hover': {
-        borderColor: 'primaryDark',
         backgroundColor: 'primaryDark',
+        borderColor: 'primaryDark',
         color: 'white'
       }
     },
     secondary: {
-      borderColor: 'secondary',
       backgroundColor: 'secondary',
+      borderColor: 'secondary',
 
       '&:hover': {
-        borderColor: 'secondaryDark',
-        backgroundColor: 'secondaryDark'
+        backgroundColor: 'secondaryDark',
+        borderColor: 'secondaryDark'
       }
     },
     rounded: {

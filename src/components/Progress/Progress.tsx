@@ -1,4 +1,4 @@
-import { s } from '../../core'
+import { s } from '../..'
 
 export const SProgress = s.div({
   display: 'flex',
