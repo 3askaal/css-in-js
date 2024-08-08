@@ -1,12 +1,12 @@
 import { get, isArray, isFunction, isObject, merge } from 'lodash'
-import { getMutatedValue } from './mutations'
+import { mutateValue } from './mutations/mutate'
 import { SHORTHANDS, VALUES } from './constants'
-import type { TStyle, TStyleObject, TStyleProps, TStyleVariants, TTheme } from '.'
+import type { Style, StyleObject, StyleProps, StyleVariants, Theme } from '.'
 import type * as CSS from 'csstype'
 
-export const parse = (style: TStyle, props: TStyleProps): CSS.Properties => {
+export const parse = (style: Style, props: StyleProps): CSS.Properties => {
   // call style function with props if necessary
-  const styleObject: TStyleObject = isFunction(style) ? style(props) : style
+  const styleObject: StyleObject = isFunction(style) ? style(props) : style
 
   return Object.entries(styleObject).reduce((acc, [prop, val]) => {
     // when value is object return recursive parse function
@@ -21,31 +21,35 @@ export const parse = (style: TStyle, props: TStyleProps): CSS.Properties => {
     // for each property
     return merge({}, acc, properties.reduce((acc, property) => {
       // check if property type targets theme values
-      const themeKey = VALUES[property as keyof typeof VALUES] as keyof TTheme ?? null
+      const themeKey = VALUES[property as keyof typeof VALUES] as keyof Theme ?? null
 
       // for each value
       return merge({}, acc, values.reduce((acc, value, index) => {
         if (value === null || value === undefined) return acc
         // get value from theme
-        const themeValue: string | null = themeKey && get(props.theme[themeKey], value)
+        const themeValue: string | null = themeKey && props.theme && get(props.theme[themeKey], value)
         // mutate value when format matches
-        const mutatedValue = /^\[([^]*?)\]$/.test(value) ? getMutatedValue(value, themeKey, props) : null
+        const mutatedValue = /^\[([^]*?)\]$/.test(value) ? mutateValue(value, themeKey, props) : null
         // define media query when index !== 0
         const mediaQuery = (!!index && !!props.theme.breakpoints.length && `@media (min-width: ${props.theme.breakpoints[index - 1]})`) || ''
+        // transform number to pixel value if needed
+        const pxValue = (themeKey === 'sizes' || themeKey === 'space') && typeof value === 'number' ? `${value}px` : null
 
         return {
           ...acc,
           // define style at root
-          ...(!mediaQuery && { [property]: themeValue ?? mutatedValue ?? value }),
+          ...(!mediaQuery && { [property]: themeValue ?? mutatedValue ?? pxValue ?? value }),
           // define style in media query
-          ...(mediaQuery && { [mediaQuery]: { [property]: themeValue ?? mutatedValue ?? value } })
+          ...(mediaQuery && { [mediaQuery]: { [property]: themeValue ?? mutatedValue ?? pxValue ?? value } })
         }
       }, {}))
     }, {}))
   }, {})
 }
 
-export const parseVariants = (variants: TStyleVariants, props: TStyleProps) => {
+export const parseVariants = (variants: StyleVariants, props: StyleProps): CSS.Properties => {
   const variantsObject = isFunction(variants) ? variants(props) : variants
-  return Object.entries(variantsObject).filter(([key]) => props[key]).map(([, value]) => parse(value, props))
+  return Object.entries(variantsObject)
+    .filter(([key]) => props[key])
+    .reduce((acc, [, value]) => merge(acc, parse(value, props)), {})
 }

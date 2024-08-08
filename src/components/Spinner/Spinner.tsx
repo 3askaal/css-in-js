@@ -1,4 +1,4 @@
-import { s, keyframes } from '../../core'
+import { s, keyframes } from '../..'
 
 const spin = keyframes({
   to: { transform: 'rotate(360deg)' }

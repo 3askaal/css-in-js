@@ -1,5 +1,4 @@
-import { s } from '../../../core'
-import { SCol } from '..'
+import { s } from '../../..'
 
 export const SRow = s.div(({ theme, s: { flexWrap = 'wrap' } = {}, gutter = 'm' }) => ({
   display: 'flex',
@@ -9,7 +8,7 @@ export const SRow = s.div(({ theme, s: { flexWrap = 'wrap' } = {}, gutter = 'm' 
   width: gutter && `calc(100% + ${theme.space[gutter]})`,
   mx: gutter && `calc(-${theme.space[gutter]} / 2)`,
 
-  [SCol]: {
+  '> *': {
     mb: flexWrap === 'wrap' && gutter && `calc(${theme.space[gutter]})`,
     px: gutter && `calc(${theme.space[gutter]} / 2)`
   }

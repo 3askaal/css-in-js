@@ -1,4 +1,4 @@
-import { s } from '../../core'
+import { s } from '../..'
 
 const TitleSizes = {
   h1: '2.5em',

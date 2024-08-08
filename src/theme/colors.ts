@@ -1,5 +1,5 @@
 import { times } from 'lodash'
-import { darken, lighten, mix } from '../utils'
+import { darken, lighten, mix } from '../'
 
 const white: string = darken('white', 10)
 const black: string = lighten('black', 10)

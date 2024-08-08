@@ -1,5 +1,5 @@
 import { isArray } from 'lodash'
-import { s } from '../../../core'
+import { s } from '../../..'
 
 export const SCol = s.div(({ width }) => ({
   flexDirection: 'column',

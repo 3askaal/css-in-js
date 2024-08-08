@@ -1,4 +1,4 @@
-import { s } from '../../../core'
+import { s } from '../../..'
 
 export const SSwitch = s.div(({ active }) => ({
   width: '2.4rem',

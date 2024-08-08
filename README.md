@@ -1,0 +1,3 @@
+### Use at own risk
+
+If you use this package, it's currently being refactored from running on top of styled components to a custom CSS-in-JS solution. Releases after 3.0.2 will probably slow down performance and have breaking changes. I will be releasing untested code to test in personal projects while slowly improving performance, writing test code and writing docs. After this I will probably release only the core functionality (without components) as a new package and deprecate this one.

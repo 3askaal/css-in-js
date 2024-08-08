@@ -1,4 +1,4 @@
-import { darken, lighten, rgba, mix } from '../../style'
+import { darken, lighten, rgba, mix } from '../utils'
 
 export const colors = {
   lighten,
