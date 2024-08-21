@@ -3,7 +3,7 @@ import type { SHORTHANDS, TAGS } from '../constants'
 import type { colors } from '..'
 import type * as CSS from 'csstype'
 
-export type ThemeColors = typeof colors;
+export type ThemeColors = Partial<typeof colors>;
 
 export type ThemeComponents = Record<string, { defaults?: Style, variants?: StyleVariants }>;
 
