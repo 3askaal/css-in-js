@@ -1,4 +1,4 @@
-import { createElement, forwardRef, useContext, useMemo } from 'react'
+import { createElement, forwardRef, useContext } from 'react'
 import ShortUniqueId from 'short-unique-id'
 import { inject } from './inject'
 import { TAGS } from './constants'
@@ -20,7 +20,7 @@ export const s: S = Object.assign(
     ...acc,
     [key]: (defaults?: Style, variants?: StyleVariants, sref?: string) => {
       return forwardRef((props, ref) => {
-        const id = useMemo(() => new ShortUniqueId({ length: 20, dictionary: 'alpha' }).rnd(), [])
+        const id = new ShortUniqueId({ length: 20, dictionary: 'alpha' }).rnd()
         const { theme } = useContext(ThemeContext)
         const style = apply({ ...props, theme }, defaults, variants, sref)
         const cssString = css(style, id)
